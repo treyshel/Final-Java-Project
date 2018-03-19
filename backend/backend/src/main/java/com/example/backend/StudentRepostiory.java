@@ -12,7 +12,7 @@ public class StudentRepostiory {
     public static ArrayList<Student> returnAllUsers() {
         try {
             Connection con = Connect.connectDB();
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM players;");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM students;");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<Student> students = new ArrayList<Student>();
             while(resultSet.next()){

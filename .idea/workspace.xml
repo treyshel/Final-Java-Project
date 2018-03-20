@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cbf816d-1e30-45ce-9be8-113d1ed8db5a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentAchievements.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/Student.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/Student.java" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDesc.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDesc.java" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentRepostiory.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentRepostiory.java" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/on-belay-tables.sql" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/on-belay-tables.sql" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDescRepository.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDescRepository.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,9 +53,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1435" />
-    <option name="y" value="39" />
-    <option name="width" value="1291" />
-    <option name="height" value="1785" />
+    <option name="y" value="35" />
+    <option name="width" value="1301" />
+    <option name="height" value="1789" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">

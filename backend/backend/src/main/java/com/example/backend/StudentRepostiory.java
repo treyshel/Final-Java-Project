@@ -24,4 +24,32 @@ public class StudentRepostiory {
             return null;
         }
     }
+
+    public static Student returnStudentByFirstName(String f_name) {
+        try {
+            Connection con = Connect.connectDB();
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM players WHERE f_name =?;");
+            preparedStatement.setString(1,f_name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return new Student(resultSet.getInt("id"),resultSet.getString("f_name"), resultSet.getString("l_name"), resultSet.getString("email"));
+        } catch (SQLException ex){
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
+
+    public static Student returnStudentByLastName(String l_name) {
+        try {
+            Connection con = Connect.connectDB();
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM players WHERE l_name =?;");
+            preparedStatement.setString(1,l_name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return new Student(resultSet.getInt("id"), resultSet.getString("f_name"), resultSet.getString("l_name"), resultSet.getString("email"));
+        } catch (SQLException ex){
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
 }

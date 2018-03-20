@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cbf816d-1e30-45ce-9be8-113d1ed8db5a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/Controllers.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentAchievements.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/Student.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/Student.java" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDesc.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentDesc.java" />
       <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentRepostiory.java" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentRepostiory.java" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/on-belay-tables.sql" afterPath="$PROJECT_DIR$/backend/backend/src/main/java/com/example/on-belay-tables.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +52,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/DemoApplication.java" />
+        <option value="$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/StudentRepostiory.java" />
       </list>
     </option>
   </component>

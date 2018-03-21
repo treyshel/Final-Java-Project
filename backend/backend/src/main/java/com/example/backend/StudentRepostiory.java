@@ -1,6 +1,7 @@
 package com.example.backend;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.Connection;
@@ -12,10 +13,8 @@ import java.util.ArrayList;
 public class StudentRepostiory {
 
 
-
     public static boolean insertStudent(String f_name, String l_name, String username, String password, String email) {
         try {
-            System.out.println(BCrypt.gensalt());
             Connection con = Connect.connectDB();
             PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO players(f_name, l_name, username, password, email) VALUES (?, ?, ?, ?, ?);");
             preparedStatement.setString(1, f_name);

@@ -7,7 +7,7 @@ public class Student {
     public String username;
     public String password;
     public String email;
-
+    public Student() {}
     public Student(Integer id, String f_name, String l_name, String username, String password, String email) {
         this.id = id;
         this.f_name = f_name;

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Connect {
     public static Connection connectDB() throws SQLException {
-        return DriverManager.getConnection("jdbc:postgresql:on-belay-db", "treyshel", "password");
+        return DriverManager.getConnection("jdbc:postgresql:on-belay-db", "treyshel", "localpass");
     }
 }
 

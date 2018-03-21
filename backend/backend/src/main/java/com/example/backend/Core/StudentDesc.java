@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.example.backend.Core;
 
 public class StudentDesc {
     public Integer id;

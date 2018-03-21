@@ -1,5 +1,6 @@
-package com.example.backend;
+package com.example.backend.Repositories;
 
+import com.example.backend.Connect;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;

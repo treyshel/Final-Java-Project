@@ -15,20 +15,22 @@ import java.util.ArrayList;
 public class StudentRepostiory {
 
 
-    public static Student insertStudent(String f_name, String l_name, String username, String p_word, String email) {
+    public static Student insertStudent(String f_name, String l_name, String session_key, String username, String p_word, String email) {
         try {
             System.out.println("hey...work!! PLEASE");
             Connection con = Connect.connectDB();
-            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO student(f_name, l_name, username, p_word, email) VALUES (?, ?, ?, ?, ?) RETURNING id;");
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO student(f_name, l_name, session_key, username, p_word, email)" +
+                    "VALUES (?, ?, ?, ?, ?, ?) RETURNING id;");
             preparedStatement.setString(1, f_name);
             preparedStatement.setString(2, l_name);
-            preparedStatement.setString(3, username);
-            preparedStatement.setString(4, p_word);
-            preparedStatement.setString(5, email);
+            preparedStatement.setString(3, session_key);
+            preparedStatement.setString(4, username);
+            preparedStatement.setString(5, p_word);
+            preparedStatement.setString(6, email);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
-            System.out.print(new Student(resultSet.getInt("id") ,f_name,l_name,username,p_word,email).f_name);
-            return new Student(resultSet.getInt("id") ,f_name,l_name,username,p_word,email);
+            System.out.print(new Student(resultSet.getInt("id") ,f_name,l_name, session_key, username,p_word,email).f_name);
+            return new Student(resultSet.getInt("id") ,f_name,l_name, session_key,username,p_word,email);
         } catch (SQLException ex){
             System.out.println(ex.getMessage());
             return null;

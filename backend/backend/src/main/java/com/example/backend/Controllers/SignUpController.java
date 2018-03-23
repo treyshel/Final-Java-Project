@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-public class Controllers {
+public class SignUpController {
     @Value("${app.salt}")
     private String salt;
     @CrossOrigin()
     @PostMapping("/signup")
-    public void signup(@RequestBody Student newStudent) {
+    public Student signup(@RequestBody Student newStudent) {
 //        line 22 hashes the password and assigns it to "pw"
-        String pw = BCrypt.hashpw(newStudent.password,salt);
-        StudentRepostiory.insertStudent(
+        String pw = BCrypt.hashpw(newStudent.p_word,salt);
+        System.out.println(newStudent);
+        return StudentRepostiory.insertStudent(
                 newStudent.f_name,
                 newStudent.l_name,
                 newStudent.username,

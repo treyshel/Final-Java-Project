@@ -1,4 +1,3 @@
-var PAGE_DATA = new Object();
 
 function signup() {
     console.log(JSON.stringify({
@@ -25,8 +24,8 @@ function signup() {
     }).then(function handleFeedResponse(response) {
         var PAGE_DATA = response;
         console.log(PAGE_DATA);
-        window.location.replace(
-            '../feed/feed.html?username=' + $('#username-input').val());
+        // window.location.replace(
+        //     '../feed/feed.html?username=' + $('#username-input').val());
     }).catch(function handleFeedError(err) {
         console.log(err)
     }

@@ -36,4 +36,30 @@ public class StudentRepostiory {
             return null;
         }
     }
+
+
+    public static ArrayList<Student> allStudents(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM student");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Student> allMember = new ArrayList<Student>();
+            while (resultSet.next()){
+                allMember.add(new
+                        Student(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email")));
+            }
+            conn.close();
+            return allStudents();
+        }
+        catch (SQLException e){
+            return null;
+        }
+    }
 }

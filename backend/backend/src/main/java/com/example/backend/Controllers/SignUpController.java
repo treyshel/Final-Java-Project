@@ -32,7 +32,6 @@ public class SignUpController {
             char c = alphabet.charAt(randomString.nextInt(26));
             sessionKey += c;
         }
-        System.out.println(newStudent);
         return StudentRepostiory.insertStudent(
                 newStudent.f_name,
                 newStudent.l_name,

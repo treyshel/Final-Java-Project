@@ -56,6 +56,7 @@ public class StudentRepostiory {
                         resultSet.getString("email")));
             }
             conn.close();
+            System.out.println(allStudents());
             return allStudents();
         }
         catch (SQLException e){

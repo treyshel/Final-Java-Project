@@ -1,4 +1,3 @@
-
 function signup() {
     console.log(JSON.stringify({
         f_name: $('#first-name-input').val(),

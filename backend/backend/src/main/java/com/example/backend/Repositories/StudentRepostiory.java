@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static org.springframework.http.HttpHeaders.FROM;
+
 public class StudentRepostiory {
 
 
@@ -58,6 +60,25 @@ public class StudentRepostiory {
             conn.close();
             System.out.println(allStudents());
             return allStudents();
+        }
+        catch (SQLException e){
+            return null;
+        }
+    }
+
+    public static Student byUsername(String username){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM student WHERE username = ?" );
+            preparedStatement.setString(1,username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return new Student(resultSet.getInt("id"),
+                    resultSet.getString("f_name"),
+                    resultSet.getString("l_name"),
+                    resultSet.getString("session_key"),
+                    resultSet.getString("username"),
+                    resultSet.getString("p_word"),
+                    resultSet.getString("email"));
         }
         catch (SQLException e){
             return null;

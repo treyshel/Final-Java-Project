@@ -36,3 +36,4 @@ $('#sign-up-form').on('submit', function (event) {
     signup();
 });
 
+

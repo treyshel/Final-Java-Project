@@ -57,3 +57,21 @@ $(function () {
         Feed(response);
     })
 })
+
+function logout() {
+    var username = getParameterByUsername('username');
+    $.ajax({
+        url: 'http://localhost:8080/logout/' + username,
+        method: 'Post',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function () {
+        window.location.replace(
+            '../signup-and-login/index.html'
+        )
+    })
+}
+
+

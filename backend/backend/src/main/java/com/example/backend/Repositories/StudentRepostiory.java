@@ -91,7 +91,7 @@ public class StudentRepostiory {
     public static boolean byeByeSessionKey(String username) {
         try {
             Connection conn = Connect.connectDB();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET sessionKey = null WHERE user = ? RETURNING *");
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = null WHERE username = ? RETURNING *");
             preparedStatement.setString(1, username);
             preparedStatement.execute();
             conn.close();

@@ -68,10 +68,12 @@ public class StudentRepostiory {
 
     public static Student byUsername(String username){
         try {
+            System.out.println("1");
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM student WHERE username = ?" );
             preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             return new Student(resultSet.getInt("id"),
                     resultSet.getString("f_name"),
                     resultSet.getString("l_name"),
@@ -81,6 +83,7 @@ public class StudentRepostiory {
                     resultSet.getString("email"));
         }
         catch (SQLException e){
+            System.out.println(e.getMessage());
             return null;
         }
     }

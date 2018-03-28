@@ -1,11 +1,4 @@
 function signup() {
-    console.log(JSON.stringify({
-        f_name: $('#first-name-input').val(),
-        l_name: $('#last-name-input').val(),
-        username: $('#username-input').val(),
-        p_word: $('#password-input').val(),
-        email: $('#email-input').val(),
-    }))
     $.ajax({
         url: 'http://localhost:8080/signup',
         method: 'Post',
@@ -29,6 +22,13 @@ function signup() {
         console.log(err)
     }
     )
+    console.log(JSON.stringify({
+        f_name: $('#first-name-input').val(),
+        l_name: $('#last-name-input').val(),
+        username: $('#username-input').val(),
+        p_word: $('#password-input').val(),
+        email: $('#email-input').val(),
+    }))
 }
 
 $('#sign-up-form').on('submit', function (event) {

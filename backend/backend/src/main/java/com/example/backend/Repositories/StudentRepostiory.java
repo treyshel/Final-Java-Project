@@ -87,4 +87,18 @@ public class StudentRepostiory {
             return null;
         }
     }
+
+    public static boolean byeByeSessionKey(String username) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET sessionKey = null WHERE user = ? RETURNING *");
+            preparedStatement.setString(1, username);
+            preparedStatement.execute();
+            conn.close();
+            return true;
+        }
+        catch (SQLException e) {
+            return false;
+        }
+    }
 }

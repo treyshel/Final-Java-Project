@@ -3,6 +3,7 @@ package com.example.backend.Repositories;
 import com.example.backend.Connect;
 import com.example.backend.Core.Student;
 import org.mindrot.jbcrypt.BCrypt;
+import org.postgresql.core.SqlCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -99,6 +100,28 @@ public class StudentRepostiory {
         }
         catch (SQLException e) {
             return false;
+        }
+    }
+
+    public static Student existingMember(String sessionKey, String username, String password) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = ? WHERE student = ? and password = ? RETURNING *");
+            preparedStatement.setString(1, sessionKey);
+            preparedStatement.setString(2, username);
+            preparedStatement.setString(3, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            conn.close();
+            return new Student(resultSet.getInt("id"),
+                    resultSet.getString("f_name"),
+                    resultSet.getString("l_name"),
+                    resultSet.getString("session_key"),
+                    resultSet.getString("username"),
+                    resultSet.getString("p_word"),
+                    resultSet.getString("email"));
+        } catch (SQLException e) {
+            return null;
         }
     }
 }

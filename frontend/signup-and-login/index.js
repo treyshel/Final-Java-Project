@@ -37,3 +37,21 @@ $('#sign-up-form').on('submit', function (event) {
 });
 
 
+function login() {
+    $.ajax({
+        url: 'http://localhost:8080/login',
+        method: 'Post',
+        dataType: 'json',
+        crossDomain: true,
+        data: JSON.stringify({
+            username: $('#username-input').val(),
+            p_word: $('password-input').val()
+        }),
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function handleFeedResponse(response) {
+        window.location.replace(
+            '../feed/feed.html?username=' + response.username
+        )
+    })
+}

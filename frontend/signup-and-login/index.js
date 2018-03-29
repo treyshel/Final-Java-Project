@@ -36,22 +36,32 @@ $('#sign-up-form').on('submit', function (event) {
     signup();
 });
 
-
+$('#login-form').on('submit', function (event) {
+    event.preventDefault();
+    login();
+})
 function login() {
+    console.log(JSON.stringify({
+        username: $('#login-username-input').val(),
+        p_word: $('#login-password-input').val()
+    }));
     $.ajax({
         url: 'http://localhost:8080/login',
         method: 'Post',
         dataType: 'json',
         crossDomain: true,
         data: JSON.stringify({
-            username: $('#username-input').val(),
-            p_word: $('password-input').val()
+            username: $('#login-username-input').val(),
+            p_word: $('#login-password-input').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'
     }).then(function handleFeedResponse(response) {
+
         window.location.replace(
             '../feed/feed.html?username=' + response.username
         )
+    }).catch(function handleFeedError(err) {
+        console.log(err)
     })
 }

@@ -1,13 +1,11 @@
 package com.example.backend.Controllers;
 
+import com.example.backend.Core.Login;
 import com.example.backend.Core.Student;
 import com.example.backend.Repositories.StudentRepostiory;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -17,8 +15,9 @@ public class LoginController {
     private String salt;
     @CrossOrigin()
     @PostMapping("/login")
-    public Student login(@RequestBody Student existingStudent) {
-        String pw = BCrypt.hashpw(existingStudent.p_word,salt);
+    public Student login(@RequestBody Login existingStudent) {
+
+        String pw = BCrypt.hashpw(existingStudent.password,salt);
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String sessionKey = "";
         Random randomString = new Random();
@@ -27,13 +26,17 @@ public class LoginController {
             char c = alphabet.charAt(randomString.nextInt(26));
             sessionKey += c;
         }
-        return StudentRepostiory.insertStudent(
-                existingStudent.f_name,
-                existingStudent.l_name,
+        Student isStudent = StudentRepostiory.existingMember(
                 sessionKey,
                 existingStudent.username,
-                pw,
-                existingStudent.email
+                pw
         );
+
+        if (isStudent != null){
+            return isStudent;
+        }else {
+            System.out.println("JSON IS WRONG");
+            return null;
+        }
     }
 }

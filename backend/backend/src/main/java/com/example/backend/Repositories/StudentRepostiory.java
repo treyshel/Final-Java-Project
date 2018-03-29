@@ -20,7 +20,6 @@ public class StudentRepostiory {
 
     public static Student insertStudent(String f_name, String l_name, String session_key, String username, String p_word, String email) {
         try {
-            System.out.println("hey...work!! PLEASE");
             Connection con = Connect.connectDB();
             PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO student(f_name, l_name, session_key, username, p_word, email)" +
                     "VALUES (?, ?, ?, ?, ?, ?) RETURNING id;");
@@ -32,10 +31,8 @@ public class StudentRepostiory {
             preparedStatement.setString(6, email);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
-            System.out.print(new Student(resultSet.getInt("id") ,f_name,l_name, session_key, username,p_word,email).f_name);
             return new Student(resultSet.getInt("id") ,f_name,l_name, session_key,username,p_word,email);
         } catch (SQLException ex){
-            System.out.println(ex.getMessage());
             return null;
         }
     }
@@ -59,7 +56,6 @@ public class StudentRepostiory {
                         resultSet.getString("email")));
             }
             conn.close();
-            System.out.println(allStudents());
             return allStudents();
         }
         catch (SQLException e){
@@ -69,7 +65,6 @@ public class StudentRepostiory {
 
     public static Student byUsername(String username){
         try {
-            System.out.println("1");
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM student WHERE username = ?" );
             preparedStatement.setString(1,username);
@@ -84,7 +79,6 @@ public class StudentRepostiory {
                     resultSet.getString("email"));
         }
         catch (SQLException e){
-            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -106,10 +100,12 @@ public class StudentRepostiory {
     public static Student existingMember(String sessionKey, String username, String password) {
         try {
             Connection conn = Connect.connectDB();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = ? WHERE student = ? and password = ? RETURNING *");
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = ? WHERE username = ? and p_word = ? RETURNING *");
             preparedStatement.setString(1, sessionKey);
             preparedStatement.setString(2, username);
             preparedStatement.setString(3, password);
+            System.out.println(password);
+            System.out.println(username);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             conn.close();
@@ -121,6 +117,7 @@ public class StudentRepostiory {
                     resultSet.getString("p_word"),
                     resultSet.getString("email"));
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }

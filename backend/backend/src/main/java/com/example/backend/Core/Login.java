@@ -1,6 +1,6 @@
 package com.example.backend.Core;
 
 public class Login {
-    public String password;
+    public String p_word;
     public String username;
 }

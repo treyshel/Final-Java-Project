@@ -2,18 +2,12 @@ package com.example.backend.Repositories;
 
 import com.example.backend.Connect;
 import com.example.backend.Core.Student;
-import org.mindrot.jbcrypt.BCrypt;
-import org.postgresql.core.SqlCommand;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import static org.springframework.http.HttpHeaders.FROM;
 
 public class StudentRepostiory {
 
@@ -33,6 +27,7 @@ public class StudentRepostiory {
             resultSet.next();
             return new Student(resultSet.getInt("id") ,f_name,l_name, session_key,username,p_word,email);
         } catch (SQLException ex){
+            System.out.println(ex.getMessage());
             return null;
         }
     }
@@ -44,9 +39,9 @@ public class StudentRepostiory {
             PreparedStatement preparedStatement = conn.prepareStatement(
                     "SELECT * FROM student");
             ResultSet resultSet = preparedStatement.executeQuery();
-            ArrayList<Student> allMember = new ArrayList<Student>();
+            ArrayList<Student> allStudents = new ArrayList<Student>();
             while (resultSet.next()){
-                allMember.add(new
+                allStudents.add(new
                         Student(resultSet.getInt("id"),
                         resultSet.getString("f_name"),
                         resultSet.getString("l_name"),
@@ -59,6 +54,7 @@ public class StudentRepostiory {
             return allStudents();
         }
         catch (SQLException e){
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -79,6 +75,7 @@ public class StudentRepostiory {
                     resultSet.getString("email"));
         }
         catch (SQLException e){
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -93,19 +90,18 @@ public class StudentRepostiory {
             return true;
         }
         catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
     }
 
-    public static Student existingMember(String sessionKey, String username, String password) {
+    public static Student StudentExists(String sessionKey, String username, String password) {
         try {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = ? WHERE username = ? and p_word = ? RETURNING *");
             preparedStatement.setString(1, sessionKey);
             preparedStatement.setString(2, username);
             preparedStatement.setString(3, password);
-            System.out.println(password);
-            System.out.println(username);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             conn.close();

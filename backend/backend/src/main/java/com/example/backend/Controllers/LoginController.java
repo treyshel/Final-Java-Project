@@ -16,8 +16,8 @@ public class LoginController {
     @CrossOrigin()
     @PostMapping("/login")
     public Student login(@RequestBody Login existingStudent) {
-
-        String pw = BCrypt.hashpw(existingStudent.password,salt);
+        String pw = BCrypt.hashpw(existingStudent.p_word,salt);
+        System.out.println(pw);
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String sessionKey = "";
         Random randomString = new Random();
@@ -26,16 +26,14 @@ public class LoginController {
             char c = alphabet.charAt(randomString.nextInt(26));
             sessionKey += c;
         }
-        Student isStudent = StudentRepostiory.existingMember(
+        Student isStudent = StudentRepostiory.StudentExists(
                 sessionKey,
                 existingStudent.username,
                 pw
         );
-
         if (isStudent != null){
             return isStudent;
-        }else {
-            System.out.println("JSON IS WRONG");
+        } else {
             return null;
         }
     }

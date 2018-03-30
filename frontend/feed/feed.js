@@ -2,16 +2,17 @@ PAGE_DATA = new Object();
 
 // **********change background color of active side tab***********
 
-function sidebarControl() {
+function sidebarProfile() {
     $("#section1").click(function () {
         $(".example1").hide(500);
         $(".example2").hide(500);
         $(".feedPage").show(500);
     });
 
+
     $("#section2").click(function () {
         $(".feedPage").hide(500);
-        $(".example2")
+        $(".example2").hide(500);
         $(".example1").show(500);
     });
 
@@ -73,5 +74,4 @@ function logout() {
         )
     })
 }
-
 

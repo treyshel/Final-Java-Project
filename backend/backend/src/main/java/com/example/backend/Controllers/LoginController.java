@@ -17,7 +17,6 @@ public class LoginController {
     @PostMapping("/login")
     public Student login(@RequestBody Login existingStudent) {
         String pw = BCrypt.hashpw(existingStudent.p_word,salt);
-        System.out.println(pw);
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String sessionKey = "";
         Random randomString = new Random();

@@ -8,6 +8,7 @@ public class StudentAchievements {
     public String academics;
     public String interests;
 
+    public StudentAchievements() {}
     public StudentAchievements(Integer id, Integer student_id, String programming_langs, String bio, String academics, String interests) {
         this.id = id;
         this.student_id = student_id;

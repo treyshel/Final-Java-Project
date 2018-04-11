@@ -3,19 +3,17 @@ package com.example.backend.Core;
 public class StudentDesc {
     public Integer id;
     public Integer student_id;
-    public String linkedin_url;
-    public String resume_url;
-    public String github_url;
-    public String portfolio_url;
+    public String programming_langs;
+    public String academics;
+    public String desired_location;
 
     public StudentDesc(){}
 
-    public StudentDesc(Integer id, Integer student_id, String linkedin_url, String resume_url, String github_url, String portfolio_url) {
+    public StudentDesc(Integer id, Integer student_id, String programming_langs, String academics, String desired_location) {
         this.id = id;
         this.student_id = student_id;
-        this.linkedin_url = linkedin_url;
-        this.resume_url = resume_url;
-        this.github_url = github_url;
-        this.portfolio_url = portfolio_url;
+        this.programming_langs = programming_langs;
+        this.academics = academics;
+        this.desired_location = desired_location;
     }
 }

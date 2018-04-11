@@ -13,10 +13,8 @@ import java.util.Random;
 public class LoginController {
     @Value("${app.salt}")
     private String salt;
-    @CrossOrigin()
-    @PostMapping("/login")
-    public Student login(@RequestBody Login existingStudent) {
-        String pw = BCrypt.hashpw(existingStudent.p_word,salt);
+
+    String makeSessionKey() {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String sessionKey = "";
         Random randomString = new Random();
@@ -25,6 +23,13 @@ public class LoginController {
             char c = alphabet.charAt(randomString.nextInt(26));
             sessionKey += c;
         }
+        return sessionKey;
+    }
+    @CrossOrigin()
+    @PostMapping("/login")
+    public Student login(@RequestBody Login existingStudent) {
+        String pw = BCrypt.hashpw(existingStudent.p_word,salt);
+        String sessionKey = makeSessionKey();
         Student isStudent = StudentRepostiory.StudentExists(
                 sessionKey,
                 existingStudent.username,

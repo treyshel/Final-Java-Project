@@ -25,7 +25,6 @@ CREATE TABLE student_achievements(
     id Serial Unique Primary Key, 
     student_id Integer references student(id),
     programming_langs text,
-    bio text,
     academics text,
     desired_location text
 );

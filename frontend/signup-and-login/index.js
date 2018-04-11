@@ -9,10 +9,7 @@ function signup() {
             l_name: $('#last-name-input').val(),
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
-            email: $('#email-input').val(),
-            programming_langs: $('#programming-langs-input').val(),
-            academics: $('#academics-input').val(),
-            location: $('#desired-location').val()
+            email: $('#email-input').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'
@@ -21,7 +18,8 @@ function signup() {
             var PAGE_DATA = response;
             console.log(PAGE_DATA);
             window.location.replace(
-                '../feed/feed.html?username=' + $('#username-input').val()
+                '../description-form/student-description.html'
+                //?username=' + $('#username-input').val()
             );
         })
         .catch(function handleFeedError(err) {
@@ -33,10 +31,7 @@ function signup() {
             l_name: $('#last-name-input').val(),
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
-            email: $('#email-input').val(),
-            programming_langs: $('#programming-langs-input').val(),
-            academics: $('#academics-input').val(),
-            location: $('#desired-location').val()
+            email: $('#email-input').val()
         })
     );
 }
@@ -77,11 +72,4 @@ function login() {
         .catch(function handleFeedError(err) {
             console.log(err);
         });
-}
-
-function showForm() {
-    $('#show-next-form').click(function() {
-        $('.first-form').hide();
-        $('.second-form').show();
-    });
 }

@@ -2,6 +2,8 @@ package com.example.backend.Controllers;
 
 
 import com.example.backend.Core.Student;
+import com.example.backend.Core.StudentDesc;
+import com.example.backend.Repositories.StudentDescRepository;
 import com.example.backend.Repositories.StudentRepostiory;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;

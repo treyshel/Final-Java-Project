@@ -1,7 +1,6 @@
 package com.example.backend.Repositories;
 
 import com.example.backend.Connect;
-import com.example.backend.Core.Student;
 import com.example.backend.Core.StudentDesc;
 
 import java.sql.Connection;

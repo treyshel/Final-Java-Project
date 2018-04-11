@@ -5,6 +5,7 @@ function studentDesc() {
         dataType: 'json',
         crossDomain: true,
         data: JSON.stringify({
+            username: window.localStorage.getItem('username'),
             programming_lang: $('#programming-langs-input').val(),
             academics: $('#academics-input').val(),
             location: $('#desired-location-input').val()
@@ -15,9 +16,7 @@ function studentDesc() {
         .then(function handleFeedResponse(response) {
             var PAGE_DATA = response;
             console.log(PAGE_DATA);
-            window.location.replace(
-                '../feed/feed.html?username=' + $('#username-input').val()
-            );
+            window.location.replace('../feed/feed.html');
         })
         .catch(function handleFeedError(err) {
             console.log(err);
@@ -31,7 +30,7 @@ function studentDesc() {
     );
 }
 
-$('#student-description-form').on('submit', function(event) {
+$('.student-description-form').on('submit', function(event) {
     event.preventDefault();
     studentDesc();
 });

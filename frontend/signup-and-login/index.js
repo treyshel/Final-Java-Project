@@ -1,13 +1,16 @@
 function signup() {
+    var username = $('#username-input').val();
+    window.localStorage.setItem('username', username);
     $.ajax({
         url: 'http://localhost:8080/signup',
         method: 'Post',
         dataType: 'json',
         crossDomain: true,
+
         data: JSON.stringify({
+            username: username,
             f_name: $('#first-name-input').val(),
             l_name: $('#last-name-input').val(),
-            username: $('#username-input').val(),
             p_word: $('#password-input').val(),
             email: $('#email-input').val()
         }),
@@ -18,8 +21,8 @@ function signup() {
             var PAGE_DATA = response;
             console.log(PAGE_DATA);
             window.location.replace(
-                '../description-form/student-description.html'
-                //?username=' + $('#username-input').val()
+                '../description-form/student-description.html?username=' +
+                    $('#username-input').val()
             );
         })
         .catch(function handleFeedError(err) {

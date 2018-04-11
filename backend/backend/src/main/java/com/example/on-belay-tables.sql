@@ -1,4 +1,4 @@
---table for the basecamp students
+--table for a student
 CREATE TABLE student( 
     id Serial Unique Primary Key,
     session_key text,
@@ -6,27 +6,14 @@ CREATE TABLE student(
     l_name text,
     username text,
     p_word text,
-    email text 
-);
-
-
---student's contact
-CREATE TABLE student_urls(
-    id Serial Unique Primary Key, 
-    student_id Integer references student(id),
+    email text,
+    programming_langs text,
+    academics text,
+    desired_location text,
     linkedin_url text,
     resume_url text,
     github_url text,
     portfolio_url text
-);
-
---student's achievements
-CREATE TABLE student_desc(
-    id Serial Unique Primary Key, 
-    student_id Integer references student(id),
-    programming_langs text,
-    academics text,
-    desired_location text
 );
 
 -- INSERT INTO student(f_name, l_name, username, p_word, email) VALUES ('Trey', 'Shelton', 'treyshel', 'BASECAMP', 'tshelton@basecampcodingacademy.org');

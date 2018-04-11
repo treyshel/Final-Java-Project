@@ -1,4 +1,4 @@
 package com.example.backend.Repositories;
 
-public class StudentUrlLinks {
+public class StudentUrls {
 }

@@ -11,7 +11,7 @@ CREATE TABLE student(
 
 
 --student's contact
-CREATE TABLE student_desc(
+CREATE TABLE student_urls(
     id Serial Unique Primary Key, 
     student_id Integer references student(id),
     linkedin_url text,
@@ -21,7 +21,7 @@ CREATE TABLE student_desc(
 );
 
 --student's achievements
-CREATE TABLE student_achievements(
+CREATE TABLE student_desc(
     id Serial Unique Primary Key, 
     student_id Integer references student(id),
     programming_langs text,

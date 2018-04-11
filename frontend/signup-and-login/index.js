@@ -10,7 +10,9 @@ function signup() {
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
             email: $('#email-input').val(),
-            programming_langs: $('#programming-langs-input').val()
+            programming_langs: $('#programming-langs-input').val(),
+            academics: $('#academics-input').val(),
+            location: $('#desired-location').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'
@@ -32,7 +34,9 @@ function signup() {
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
             email: $('#email-input').val(),
-            programming_langs: $('#programming-langs-input').val()
+            programming_langs: $('#programming-langs-input').val(),
+            academics: $('#academics-input').val(),
+            location: $('#desired-location').val()
         })
     );
 }

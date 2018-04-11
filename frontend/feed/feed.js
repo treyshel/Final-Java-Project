@@ -47,6 +47,12 @@ function showFeedData() {
         '</h2>' +
         '<h2>Fav Lang: ' +
         PAGE_DATA.programming_langs +
+        '</h2>' +
+        '<h2>Academics: ' +
+        PAGE_DATA.academics +
+        '</h2>' +
+        '<h2>Desired Location: ' +
+        PAGE_DATA.location +
         '</h2>'
     );
 }

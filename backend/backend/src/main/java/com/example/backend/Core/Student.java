@@ -8,8 +8,15 @@ public class Student {
     public String username;
     public String p_word;
     public String email;
+    public String programming_langs;
+    public String desired_location;
+    public String linkedin_url;
+    public String resume_url;
+    public String github_url;
+    public String portfolio_url;
+
     public Student() {}
-    public Student(Integer id, String f_name, String l_name, String session_key,String username, String p_word, String email) {
+    public Student(Integer id, String f_name, String l_name, String session_key,String username, String p_word, String email, String programming_langs, String desired_location, String linkedin_url, String resume_url, String github_url, String portfolio_url) {
         this.id = id;
         this.f_name = f_name;
         this.l_name = l_name;
@@ -17,5 +24,11 @@ public class Student {
         this.username = username;
         this.p_word = p_word;
         this.email = email;
+        this.programming_langs = programming_langs;
+        this.desired_location = programming_langs;
+        this.linkedin_url = linkedin_url;
+        this.resume_url = resume_url;
+        this.github_url = github_url;
+        this.portfolio_url = portfolio_url;
     }
 }

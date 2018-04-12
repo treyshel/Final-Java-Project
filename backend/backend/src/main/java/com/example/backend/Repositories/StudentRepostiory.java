@@ -119,5 +119,26 @@ public class StudentRepostiory {
         }
     }
 
-    
+    public static Student deleteAccount(Integer id, String sessionKey, String f_name, String l_name, String username, String p_word, String email, String programming_langs, String desired_location, String linkedin_url, String resume_url, String github_url, String portfolio_url) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM student WHERE username = ?");
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, sessionKey);
+            preparedStatement.setString(3, f_name);
+            preparedStatement.setString(4, l_name);
+            preparedStatement.setString(5, username);
+            preparedStatement.setString(6, p_word);
+            preparedStatement.setString(7, email);
+            preparedStatement.setString(8, programming_langs);
+            preparedStatement.setString(9, desired_location);
+            preparedStatement.setString(10, linkedin_url);
+            preparedStatement.setString(11, resume_url);
+            preparedStatement.setString(12, github_url);
+            preparedStatement.setString(13, portfolio_url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }

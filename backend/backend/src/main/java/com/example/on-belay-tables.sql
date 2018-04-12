@@ -8,7 +8,6 @@ CREATE TABLE student(
     p_word text,
     email text,
     programming_langs text,
-    academics text,
     desired_location text,
     linkedin_url text,
     resume_url text,

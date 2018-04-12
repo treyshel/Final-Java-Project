@@ -2,8 +2,6 @@ package com.example.backend.Controllers;
 
 
 import com.example.backend.Core.Student;
-import com.example.backend.Core.StudentDesc;
-import com.example.backend.Repositories.StudentDescRepository;
 import com.example.backend.Repositories.StudentRepostiory;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 @RestController
@@ -44,7 +41,13 @@ public class SignUpController {
                 sessionKey,
                 newStudent.username,
                 pw,
-                newStudent.email
+                newStudent.email,
+                newStudent.programming_langs,
+                newStudent.desired_location,
+                newStudent.linkedin_url,
+                newStudent.resume_url,
+                newStudent.github_url,
+                newStudent.portfolio_url
         );
     }
 }

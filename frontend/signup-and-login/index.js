@@ -12,9 +12,13 @@ function signup() {
             f_name: $('#first-name-input').val(),
             l_name: $('#last-name-input').val(),
             p_word: $('#password-input').val(),
-            email: $('#email-input').val()
-            // programming_langs: $('#programming-langs-input').val(),
-            // location: $('#desired-location-input').val()
+            email: $('#email-input').val(),
+            programming_langs: $('#programming-langs-input').val(),
+            desired_location: $('#desired-location-input').val(),
+            linkedin_url: $('#linkedin-url-input').val(),
+            resume_url: $('#resume-url-input').val(),
+            github_url: $('#github-url-input').val(),
+            portfolio_url: $('#portfolio-url-input').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'
@@ -35,9 +39,13 @@ function signup() {
             l_name: $('#last-name-input').val(),
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
-            email: $('#email-input').val()
-            // programming_lang: $('#programming-langs-input').val(),
-            // location: $('#desired-location-input').val()
+            email: $('#email-input').val(),
+            programming_lang: $('#programming-langs-input').val(),
+            desired_location: $('#desired-location-input').val(),
+            linkedin_url: $('#linkedin-url-input').val(),
+            resume_url: $('#resume-url-input').val(),
+            github_url: $('#github-url-input').val(),
+            portfolio_url: $('#portfolio-url-input').val()
         })
     );
 }
@@ -51,6 +59,7 @@ $('#login-form').on('submit', function(event) {
     event.preventDefault();
     login();
 });
+
 function login() {
     console.log(
         JSON.stringify({

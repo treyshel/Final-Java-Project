@@ -25,7 +25,7 @@ public class Student {
         this.p_word = p_word;
         this.email = email;
         this.programming_langs = programming_langs;
-        this.desired_location = programming_langs;
+        this.desired_location = desired_location;
         this.linkedin_url = linkedin_url;
         this.resume_url = resume_url;
         this.github_url = github_url;

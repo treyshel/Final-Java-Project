@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LogoutController {
     @CrossOrigin
     @PostMapping("/logout/{username}")
-    public Boolean logout(@PathVariable String username) {
+    public boolean logout(@PathVariable String username) {
         return (StudentRepostiory.byeByeSessionKey(username));
     }
 }

@@ -146,42 +146,18 @@ public class StudentRepostiory {
         }
     }
 
-    public static Student deleteAccount(Integer id, String sessionKey, String f_name, String l_name, String username, String p_word, String email, String programming_langs, String desired_location, String linkedin_url, String resume_url, String github_url, String portfolio_url) {
+    public static boolean deleteAccount(String username) {
         try {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM student WHERE username = ?");
             preparedStatement.setString(1, username);
-//            preparedStatement.setString(2, sessionKey);
-//            preparedStatement.setString(3, f_name);
-//            preparedStatement.setString(4, l_name);
-//            preparedStatement.setString(5, username);
-//            preparedStatement.setString(6, p_word);
-//            preparedStatement.setString(7, email);
-//            preparedStatement.setString(8, programming_langs);
-//            preparedStatement.setString(9, desired_location);
-//            preparedStatement.setString(10, linkedin_url);
-//            preparedStatement.setString(11, resume_url);
-//            preparedStatement.setString(12, github_url);
-//            preparedStatement.setString(13, portfolio_url);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             conn.close();
-            return new Student(resultSet.getInt("id"),
-                    resultSet.getString("f_name"),
-                    resultSet.getString("l_name"),
-                    resultSet.getString("session_key"),
-                    resultSet.getString("username"),
-                    resultSet.getString("p_word"),
-                    resultSet.getString("email"),
-                    resultSet.getString("programming_langs"),
-                    resultSet.getString("desired_location"),
-                    resultSet.getString("linkedin_url"),
-                    resultSet.getString("resume_url"),
-                    resultSet.getString("github_url"),
-                    resultSet.getString("portfolio_url"));
+            return true;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            return null;
+            return false;
         }
     }
 }

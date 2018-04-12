@@ -100,13 +100,13 @@ function logout() {
 function deleteAccount() {
     var username = getParameterByUsername('username');
     $.ajax({
-        url: 'http://localhost:8080/deleteAccount' + username,
+        url: 'http://localhost:8080/deleteAccount/' + username,
         method: 'Post',
         dataType: 'json',
         crossDomain: true,
         contentType: 'application/json',
         mimeType: 'application/json'
     }).then(function() {
-        window.localStorage.replace('../deleteAccount');
+        window.location.replace('../signup-and-login/index.html');
     });
 }

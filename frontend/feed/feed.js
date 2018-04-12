@@ -44,16 +44,17 @@ function showFeedData() {
         '</h2>' +
         '<h2>Email: ' +
         PAGE_DATA.email +
-        '</h2>' +
-        '<h2>Fav Lang: ' +
-        PAGE_DATA.programming_langs +
-        '</h2>' +
-        '<h2>Academics: ' +
-        PAGE_DATA.academics +
-        '</h2>' +
-        '<h2>Desired Location: ' +
-        PAGE_DATA.location +
         '</h2>'
+        //+
+        // '<h2>Fav Lang: ' +
+        // PAGE_DATA.programming_langs +
+        // '</h2>' +
+        // '<h2>Academics: ' +
+        // PAGE_DATA.academics +
+        // '</h2>' +
+        // '<h2>Desired Location: ' +
+        // PAGE_DATA.location +
+        // '</h2>'
     );
 }
 
@@ -96,5 +97,19 @@ function logout() {
         mimeType: 'application/json'
     }).then(function() {
         window.location.replace('../signup-and-login/index.html');
+    });
+}
+
+function deleteAccount() {
+    var username = getParameterByUsername('username');
+    $.ajax({
+        url: 'http://localhost:8080/deleteAccount' + username,
+        method: 'Post',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function() {
+        window.localStorage.replace('../deleteAccount');
     });
 }

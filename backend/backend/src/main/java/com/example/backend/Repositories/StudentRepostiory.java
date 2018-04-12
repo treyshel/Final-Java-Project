@@ -65,6 +65,7 @@ public class StudentRepostiory {
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM student WHERE username = ?" );
             preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println(resultSet);
             resultSet.next();
             return new Student(resultSet.getInt("id"),
                     resultSet.getString("f_name"),
@@ -117,4 +118,6 @@ public class StudentRepostiory {
             return null;
         }
     }
+
+    
 }

@@ -13,6 +13,8 @@ function signup() {
             l_name: $('#last-name-input').val(),
             p_word: $('#password-input').val(),
             email: $('#email-input').val()
+            // programming_langs: $('#programming-langs-input').val(),
+            // location: $('#desired-location-input').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'
@@ -21,8 +23,7 @@ function signup() {
             var PAGE_DATA = response;
             console.log(PAGE_DATA);
             window.location.replace(
-                '../description-form/student-description.html?username=' +
-                    $('#username-input').val()
+                '../feed/feed.html?username=' + $('#username-input').val()
             );
         })
         .catch(function handleFeedError(err) {
@@ -35,6 +36,8 @@ function signup() {
             username: $('#username-input').val(),
             p_word: $('#password-input').val(),
             email: $('#email-input').val()
+            // programming_lang: $('#programming-langs-input').val(),
+            // location: $('#desired-location-input').val()
         })
     );
 }

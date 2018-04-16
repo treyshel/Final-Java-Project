@@ -15,6 +15,22 @@ CREATE TABLE student(
     portfolio_url text
 );
 
+CREATE TABLE recruiter(
+        id Serial Unique Primary Key,
+        f_name text,
+        l_name text,
+        title text,
+        session_key text,
+        username text,
+        p_word text,
+        email text,
+        position_level text,
+        company_name text,
+        company_location text,
+        langs_used text,
+        website_url text
+);
+
 -- INSERT INTO student(f_name, l_name, username, p_word, email) VALUES ('Trey', 'Shelton', 'treyshel', 'BASECAMP', 'tshelton@basecampcodingacademy.org');
 -- INSERT INTO student(f_name, l_name, username, p_word, email) VALUES ('Vale', 'Alvarez', 'valvarez', 'papaV', 'valvarez@basecampcodingacademy.org');
 

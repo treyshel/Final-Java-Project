@@ -32,69 +32,76 @@
                 <div class="tab-pane active" id="1b">
                     <form id="sign-up-form">
                         <fieldset>
-                            <div class="form-group">
-                                <label for="exampleInputFirstName">First Name</label>
-                                <input type="firstname" class="form-control" id="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
+                            <div id="first-signup-form">
+                                <div class="form-group">
+                                    <label for="exampleInputFirstName">First Name</label>
+                                    <input type="firstname" class="form-control" id="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputLastName">Last Name</label>
+                                    <input type="lastname" class="form-control" id="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername">Username</label>
+                                    <input type="username" class="form-control" id="username-input" placeholder="Username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Password</label>
+                                    <input type="password" class="form-control" id="password-input" placeholder="Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Email address</label>
+                                    <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputLastName">Last Name</label>
-                                <input type="lastname" class="form-control" id="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputUsername">Username</label>
-                                <input type="username" class="form-control" id="username-input" placeholder="Username" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword">Password</label>
-                                <input type="password" class="form-control" id="password-input" placeholder="Password" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail">Email address</label>
-                                <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleProgrammingLangs">Programming Langs</label>
-                                <input type="programming-langs" class="form-control" id="programming-langs-input" aria-describedby="emailHelp" placeholder="Enter Fav Programming Langs."
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDesiredLocation">Desired Location</label>
-                                <input type="desired-location" class="form-control" id="desired-location-input" aria-describedby="emailHelp" placeholder="Enter Desired Location"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleLinkedInUrl">LinkedIn Url</label>
-                                <input type="linkedin-url" class="form-control" id="linkedin-url-input" aria-describedby="emailHelp" placeholder="Enter LinkedIn Url"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleResumeUrl">Resume Url</label>
-                                <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleGithubUrl">Github Url</label>
-                                <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="examplePortfolioUrl">Portfolio Url</label>
-                                <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url"
-                                    required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
+                            <div id="second-signup-form" hidden>
+                                <div class="form-group">
+                                    <label for="exampleProgrammingLangs">Programming Langs</label>
+                                    <input type="programming-langs" class="form-control" id="programming-langs-input" aria-describedby="emailHelp" placeholder="Enter Fav Programming Langs."
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleDesiredLocation">Desired Location</label>
+                                    <input type="desired-location" class="form-control" id="desired-location-input" aria-describedby="emailHelp" placeholder="Enter Desired Location"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleLinkedInUrl">LinkedIn Url</label>
+                                    <input type="linkedin-url" class="form-control" id="linkedin-url-input" aria-describedby="emailHelp" placeholder="Enter LinkedIn Url"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleResumeUrl">Resume Url</label>
+                                    <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleGithubUrl">Github Url</label>
+                                    <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="examplePortfolioUrl">Portfolio Url</label>
+                                    <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url"
+                                        required>
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                </div>
                             </div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <div id="signup-button" hidden>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
                     </form>
                 </div>
                 <div class="tab-pane" id="2b">

@@ -47,11 +47,12 @@ function showFeedData() {
         '</h2>' +
         '<h2>Fav Lang: ' +
         PAGE_DATA.programming_langs +
-        '</h2>'
-        // +
-        // '<h2>Desired Location: ' +
-        // PAGE_DATA.location +
-        // '</h2>'
+        '</h2>' +
+        '<h2>Desired Location: ' +
+        PAGE_DATA.desired_location +
+        '</h2>' +
+        '<h2>LinkedIn URL' +
+        PAGE_DATA.linkedin_url
     );
 }
 

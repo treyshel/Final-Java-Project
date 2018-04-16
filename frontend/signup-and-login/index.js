@@ -55,6 +55,12 @@ $('#sign-up-form').on('submit', function(event) {
     signup();
 });
 
+$('.next-form-button').on('click', function() {
+    $('#first-signup-form').attr('hidden', true);
+    $('#second-signup-form').attr('hidden', false);
+    $('#signup-button').attr('hidden', false);
+});
+
 $('#login-form').on('submit', function(event) {
     event.preventDefault();
     login();

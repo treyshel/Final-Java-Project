@@ -42,7 +42,8 @@ function showFeedData() {
         '<h2>Username: ' +
         PAGE_DATA.username +
         '</h2>' +
-        '<h2>Email: ' +
+        '<h2>' +
+        'Email: ' +
         PAGE_DATA.email +
         '</h2>' +
         '<h2>Fav Lang: ' +
@@ -51,8 +52,14 @@ function showFeedData() {
         '<h2>Desired Location: ' +
         PAGE_DATA.desired_location +
         '</h2>' +
-        '<h2>LinkedIn URL' +
-        PAGE_DATA.linkedin_url
+        '<h2>LinkedIn URL: ' +
+        PAGE_DATA.linkedin_url +
+        '</h2>' +
+        '<a href="https://' +
+        PAGE_DATA.portfolio_url +
+        '"> Portfolio: ' +
+        PAGE_DATA.portfolio_url +
+        '</a>'
     );
 }
 

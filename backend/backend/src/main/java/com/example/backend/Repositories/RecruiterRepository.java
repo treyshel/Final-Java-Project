@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RecruiterRepository {
     public static Recruiter insertRecruiter(String f_name, String l_name, String title, String session_key, String username, String p_word, String email, String position_level, String company_name,
@@ -37,4 +38,98 @@ public class RecruiterRepository {
             return null;
         }
     }
+
+
+    public static Recruiter byUsername(String username){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM recruiter WHERE username = ?" );
+            preparedStatement.setString(1,username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return new Recruiter(resultSet.getInt("id"),
+                    resultSet.getString("f_name"),
+                    resultSet.getString("l_name"),
+                    resultSet.getString("title"),
+                    resultSet.getString("session_key"),
+                    resultSet.getString("username"),
+                    resultSet.getString("p_word"),
+                    resultSet.getString("email"),
+                    resultSet.getString("position_level"),
+                    resultSet.getString("company_name"),
+                    resultSet.getString("company_location"),
+                    resultSet.getString("langs_used"),
+                    resultSet.getString("website_url"));
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Student> sameLocation(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM student ON JOIN WHERE recruiter.company_location = student.desired_location");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Student> sameLocation = new ArrayList<Student>();
+            while (resultSet.next()){
+                sameLocation.add(new
+                        Student(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("programming_langs"),
+                        resultSet.getString("desired_location"),
+                        resultSet.getString("linkedin_url"),
+                        resultSet.getString("resume_url"),
+                        resultSet.getString("github_url"),
+                        resultSet.getString("portfolio_url")));
+            }
+            conn.close();
+            return sameLocation;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Recruiter> allRecruiters(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM recruiter");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Recruiter> allRecruiters = new ArrayList<Recruiter>();
+            while (resultSet.next()){
+                allRecruiters.add(new
+                        Recruiter(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("title"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("position_level"),
+                        resultSet.getString("company_name"),
+                        resultSet.getString("company_location"),
+                        resultSet.getString("langs_used"),
+                        resultSet.getString("website_url")));
+            }
+            conn.close();
+            return allRecruiters;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
 }

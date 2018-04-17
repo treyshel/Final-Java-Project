@@ -66,7 +66,7 @@ public class StudentRepostiory {
                         resultSet.getString("portfolio_url")));
             }
             conn.close();
-            return allStudents();
+            return allStudents;
         }
         catch (SQLException e){
             System.out.println(e.getMessage());

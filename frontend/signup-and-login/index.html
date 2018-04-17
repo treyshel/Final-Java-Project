@@ -27,7 +27,6 @@
                     <a href="#2b" data-toggle="tab">Login</a>
                 </li>
             </ul>
-
             <div class="tab-content clearfix">
                 <div class="tab-pane active" id="1b">
                     <form id="sign-up-form">
@@ -61,10 +60,18 @@
                                 <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
                             </div>
                             <div id="second-signup-form" hidden>
-                                <div class="form-group">
+                                <div class="form-group programming-langs-input">
                                     <label for="exampleProgrammingLangs">Programming Langs</label>
-                                    <input type="programming-langs" class="form-control" id="programming-langs-input" aria-describedby="emailHelp" placeholder="Enter Fav Programming Langs."
-                                        required>
+                                    <select id="programming-langs-input" name="programming-langs-input" class="from-control">
+                                        <option value="" selected></option>
+                                        <option value="C# / ASP.NET">C# / ASP.NET</option>
+                                        <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
+                                        <option value="Java / Spring">Java / Spring</option>
+                                        <option value="Python / Django or Flask">Python / Django or Flask</option>
+                                        <option value="Ruby / Ruby On Rails">Ruby / Ruby On Rails</option>
+                                        <option value="Scala / Play or Spring">Scala / Play or Spring</option>
+                                        <option value="C++ / Qt">C++ / Qt</option>
+                                    </select>
                                     <small id="emailHelp" class="form-text text-muted"></small>
                                 </div>
                                 <div class="form-group">

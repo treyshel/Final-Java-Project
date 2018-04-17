@@ -41,4 +41,11 @@ public class LoginController {
             return null;
         }
     }
+
+    @CrossOrigin()
+    @PostMapping("/logout/{username}")
+    public boolean logout(@PathVariable String username) {
+        return StudentRepostiory.byeByeSessionKey(username);
+    }
+
 }

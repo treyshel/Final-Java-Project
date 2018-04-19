@@ -33,12 +33,12 @@ CREATE TABLE recruiter(
 
 CREATE TABLE connections (
         id Serial Unique Primary Key,
-        student_id references student.id,
-        recruiter_id references recruiter.id
+        student_id Integer REFERENCES student (id) ON DELETE CASCADE,
+        recruiter_id Integer REFERENCES recruiter (id) ON DELETE CASCADE
         );
 
 -- INSERT INTO student(f_name, l_name, username, p_word, email) VALUES ('Trey', 'Shelton', 'treyshel', 'BASECAMP', 'tshelton@basecampcodingacademy.org');
--INSERT INTO student(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Vale', 'Alvarez', 'Mr.', 'aasgfda', 'valvarez', 'papaV', 'valvarez@basecampcodingacademy.org', 'Entry Level', 'C Spire', 'Ridgeland', 'Java / Spring', 'www.cspire.com');
+INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Vale', 'Alvarez', 'Mr.', 'aasgfda', 'valvarez', 'papaV', 'valvarez@basecampcodingacademy.org', 'Entry Level', 'C Spire', 'Ridgeland', 'Java / Spring', 'www.cspire.com');
 
 -- INSERT INTO student_desc(student_id, linkedin_url, resume_url, github_url, portfolio_url) VALUES (1, 'https://www.linkedin.com/feed/', 'https://www.resume.com/trey/', 'https://www.github.com/treyshel/', 'https://www.treyshel.github.io');
 -- INSERT INTO student_desc(student_id, linkedin_url, resume_url, github_url, portfolio_url) VALUES (2, 'https://www.linkedin.com/feed/', 'https://www.resume.com/vale/', 'https://www.github.com/vale/', 'https://www.valvarez.github.io');

@@ -101,21 +101,6 @@ public class StudentRepostiory {
         }
     }
 
-    public static boolean byeByeSessionKey(String username) {
-        try {
-            Connection conn = Connect.connectDB();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = null WHERE username = ? RETURNING *");
-            preparedStatement.setString(1, username);
-            preparedStatement.execute();
-            conn.close();
-            return true;
-        }
-        catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
-
     public static Student StudentExists(String sessionKey, String username, String password) {
         try {
             Connection conn = Connect.connectDB();
@@ -142,6 +127,21 @@ public class StudentRepostiory {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+
+    public static boolean byeByeSessionKey(String username) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE student SET session_key = null WHERE username = ? RETURNING *");
+            preparedStatement.setString(1, username);
+            preparedStatement.execute();
+            conn.close();
+            return true;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
     }
 

@@ -15,7 +15,7 @@ public class RecruiterRepository {
                                           String company_location, String langs_used, String website_url) {
         try {
             Connection con = Connect.connectDB();
-            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO student(f_name, l_name, " +
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO recruiter (f_name, l_name, " +
                     "title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id;");
             preparedStatement.setString(1, f_name);
@@ -35,6 +35,35 @@ public class RecruiterRepository {
             return new Recruiter(resultSet.getInt("id") ,f_name,l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url);
         } catch (SQLException ex){
             System.out.println(ex.getMessage());
+            return null;
+        }
+    }
+
+    public static Recruiter RecruiterExists(String sessionKey, String username, String password) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE recruiter SET session_key = ? WHERE username = ? and p_word = ? RETURNING *");
+            preparedStatement.setString(1, sessionKey);
+            preparedStatement.setString(2, username);
+            preparedStatement.setString(3, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            conn.close();
+            return new Recruiter(resultSet.getInt("id"),
+                    resultSet.getString("f_name"),
+                    resultSet.getString("l_name"),
+                    resultSet.getString("title"),
+                    resultSet.getString("sessionKey"),
+                    resultSet.getString("username"),
+                    resultSet.getString("p_word"),
+                    resultSet.getString("email"),
+                    resultSet.getString("position_level"),
+                    resultSet.getString("company_name"),
+                    resultSet.getString("company_location"),
+                    resultSet.getString("langs_used"),
+                    resultSet.getString("website_url"));
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -99,6 +128,12 @@ public class RecruiterRepository {
         }
     }
 
+    public static ArrayList<Student> sameLanguage() {
+        try {
+            
+        }
+    }
+
     public static ArrayList<Recruiter> allRecruiters(){
         try {
             Connection conn = Connect.connectDB();
@@ -128,6 +163,36 @@ public class RecruiterRepository {
         catch (SQLException e){
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+
+    public static boolean byeByeSessionKey(String username) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE recruiter SET session_key = null WHERE username = ? RETURNING *");
+            preparedStatement.setString(1, username);
+            preparedStatement.execute();
+            conn.close();
+            return true;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean deleteAccount(String username) {
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM recruiter WHERE username = ?");
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            conn.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
     }
 

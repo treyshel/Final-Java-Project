@@ -2,7 +2,7 @@ function signup() {
     var username = $('#username-input').val();
     window.localStorage.setItem('username', username);
     $.ajax({
-        url: 'http://localhost:8080/signup',
+        url: 'http://localhost:8080/student-signup',
         method: 'Post',
         dataType: 'json',
         crossDomain: true,

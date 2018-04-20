@@ -63,6 +63,24 @@ function showFeedData() {
     );
 }
 
+function showJobPostings() {
+    var html = '';
+    for (var i = 0; i < PAGE_DATA.length; i++) {
+        html +=
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading">Company: ' +
+            PAGE_DATA[i].company_name +
+            '</div>' +
+            '<div class="panel-body">Information: ' +
+            PAGE_DATA[i].email +
+            PAGE_DATA[i].company_location +
+            PAGE_DATA[i].langs_used +
+            '</div>' +
+            '</div>';
+    }
+    return html;
+}
+
 function Feed(response) {
     console.log(response);
     PAGE_DATA = response;
@@ -82,7 +100,7 @@ function getParameterByUsername(username) {
 $(function() {
     var username = getParameterByUsername('username');
     console.log(username);
-    $.post('http://localhost:8080/feed/' + username).then(
+    $.post('http://localhost:8080/student-feed/' + username).then(
         function handleResponse(response) {
             var response = response;
             console.log(response);
@@ -116,5 +134,20 @@ function deleteAccount() {
         mimeType: 'application/json'
     }).then(function() {
         window.location.replace('../signup-and-login/index.html');
+    });
+}
+
+function Postings() {
+    $.ajax({
+        url: 'http://localhost:8080/allRecruiters',
+        method: 'Get',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function(response) {
+        console.log(response);
+        PAGE_DATA = response;
+        $('.postings').html(showJobPostings());
     });
 }

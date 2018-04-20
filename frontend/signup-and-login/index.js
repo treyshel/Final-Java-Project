@@ -74,7 +74,7 @@ function login() {
         })
     );
     $.ajax({
-        url: 'http://localhost:8080/login',
+        url: 'http://localhost:8080/student-login',
         method: 'Post',
         dataType: 'json',
         crossDomain: true,

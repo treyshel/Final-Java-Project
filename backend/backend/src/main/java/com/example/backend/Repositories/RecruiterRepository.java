@@ -128,11 +128,14 @@ public class RecruiterRepository {
         }
     }
 
-    public static ArrayList<Student> sameLanguage() {
-        try {
-            
-        }
-    }
+//    public static ArrayList<Student> sameLanguage() {
+//        try {
+//            Connection conn = Connect.connectDB();
+//            PreparedStatement preparedStatement = conn.prepareStatement(
+//                    "SELECT * FROM student ON JOIN WHERE recruiter.langs_used = student.programming_langs")
+//
+//        }
+//    }
 
     public static ArrayList<Recruiter> allRecruiters(){
         try {

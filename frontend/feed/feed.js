@@ -71,11 +71,13 @@ function showJobPostings() {
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>' +
-            '<div class="panel-body">Information: ' +
+            '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
             PAGE_DATA[i].email +
+            '</p><p>Company Location: ' +
             PAGE_DATA[i].company_location +
+            '</p><p>Languages for Position: ' +
             PAGE_DATA[i].langs_used +
-            '</div>' +
+            '</p></div>' +
             '</div>';
     }
     return html;

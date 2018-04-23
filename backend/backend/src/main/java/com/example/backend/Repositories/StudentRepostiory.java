@@ -1,6 +1,7 @@
 package com.example.backend.Repositories;
 
 import com.example.backend.Connect;
+import com.example.backend.Core.Recruiter;
 import com.example.backend.Core.Student;
 
 import java.sql.Connection;
@@ -67,6 +68,38 @@ public class StudentRepostiory {
             }
             conn.close();
             return allStudents;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Recruiter> sameLocation(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.company_location = student.desired_location");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
+            while (resultSet.next()){
+                sameLocation.add(new
+                        Recruiter(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("title"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("position_level"),
+                        resultSet.getString("company_name"),
+                        resultSet.getString("company_location"),
+                        resultSet.getString("langs_used"),
+                        resultSet.getString("website_url")));
+            }
+            conn.close();
+            return sameLocation;
         }
         catch (SQLException e){
             System.out.println(e.getMessage());

@@ -78,7 +78,7 @@ public class StudentRepostiory {
         try {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement(
-                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.company_location = student.desired_location");
+                    "SELECT * FROM recruiter JOIN student ON recruiter.company_location = student.desired_location");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
             while (resultSet.next()){
@@ -110,7 +110,7 @@ public class StudentRepostiory {
         try {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement(
-                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.position_level = student.position_level");
+                    "SELECT * FROM recruiter JOIN student ON recruiter.position_level = student.position_level");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
             while (resultSet.next()){
@@ -142,7 +142,7 @@ public class StudentRepostiory {
         try {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement(
-                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.langs_used = student.programming_langs");
+                    "SELECT * FROM recruiter JOIN student ON recruiter.langs_used = student.programming_langs");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
             while (resultSet.next()){

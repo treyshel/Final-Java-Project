@@ -63,7 +63,7 @@ function showFeedData() {
     );
 }
 
-function showJobPostings() {
+function showAllJobPostings() {
     var html = '';
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
@@ -83,6 +83,78 @@ function showJobPostings() {
             PAGE_DATA[i].l_name +
             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
+    }
+    return html;
+}
+
+function showMatchingLocation() {
+    var html = '';
+    for (var i = 0; i < PAGE_DATA.length; i++) {
+        html +=
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading">Company: ' +
+            PAGE_DATA[i].company_name +
+            '</div>';
+        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
+        // PAGE_DATA[i].email +
+        // '</p><p>Company Location: ' +
+        // PAGE_DATA[i].company_location +
+        // '</p><p>Languages for Position: ' +
+        // PAGE_DATA[i].langs_used +
+        // '</p><p>Recruiter Name: ' +
+        // PAGE_DATA[i].f_name +
+        // ' ' +
+        // PAGE_DATA[i].l_name +
+        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+        // '</div>';
+    }
+    return html;
+}
+
+function showMatchingPositionLevel() {
+    var html = '';
+    for (var i = 0; i < PAGE_DATA.length; i++) {
+        html +=
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading">Company: ' +
+            PAGE_DATA[i].company_name +
+            '</div>';
+        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
+        // PAGE_DATA[i].email +
+        // '</p><p>Company Location: ' +
+        // PAGE_DATA[i].company_location +
+        // '</p><p>Languages for Position: ' +
+        // PAGE_DATA[i].langs_used +
+        // '</p><p>Recruiter Name: ' +
+        // PAGE_DATA[i].f_name +
+        // ' ' +
+        // PAGE_DATA[i].l_name +
+        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+        // '</div>';
+    }
+    return html;
+}
+
+function showMatchingLanguage() {
+    var html = '';
+    for (var i = 0; i < PAGE_DATA.length; i++) {
+        html +=
+            '<div class="panel panel-default">' +
+            '<div class="panel-heading">Company: ' +
+            PAGE_DATA[i].company_name +
+            '</div>';
+        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
+        // PAGE_DATA[i].email +
+        // '</p><p>Company Location: ' +
+        // PAGE_DATA[i].company_location +
+        // '</p><p>Languages for Position: ' +
+        // PAGE_DATA[i].langs_used +
+        // '</p><p>Recruiter Name: ' +
+        // PAGE_DATA[i].f_name +
+        // ' ' +
+        // PAGE_DATA[i].l_name +
+        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+        // '</div>';
     }
     return html;
 }
@@ -154,7 +226,7 @@ function Postings() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showJobPostings());
+        $('.postings').html(showAllJobPostings());
     });
 }
 
@@ -171,7 +243,7 @@ function filteredByMatchingLocation() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showJobPostings());
+        $('.postings').html(showMatchingLocation());
     });
 }
 
@@ -186,7 +258,7 @@ function filteredByMatchingPositionLevel() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showJobPostings());
+        $('.postings').html(showMatchingPositionLevel());
     });
 }
 
@@ -201,6 +273,6 @@ function filteredByMatchingLanguage() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showJobPostings());
+        $('.postings').html(showMatchingLanguage());
     });
 }

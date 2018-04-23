@@ -14,11 +14,11 @@ public class StudentRepostiory {
 
 
     public static Student insertStudent(String f_name, String l_name, String session_key, String username, String p_word, String email, String programming_langs,
-                                        String desired_location, String linkedin_url, String resume_url, String github_url, String portfolio_url) {
+                                        String desired_location, String position_level, String resume_url, String github_url, String portfolio_url) {
         try {
             Connection con = Connect.connectDB();
             PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO student(f_name, l_name, " +
-                    "session_key, username, p_word, email, programming_langs, desired_location, linkedin_url, resume_url," +
+                    "session_key, username, p_word, email, programming_langs, desired_location, position_level, resume_url," +
                     "github_url, portfolio_url)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id;");
             preparedStatement.setString(1, f_name);
@@ -29,13 +29,13 @@ public class StudentRepostiory {
             preparedStatement.setString(6, email);
             preparedStatement.setString(7, programming_langs);
             preparedStatement.setString(8, desired_location);
-            preparedStatement.setString(9, linkedin_url);
+            preparedStatement.setString(9, position_level);
             preparedStatement.setString(10, resume_url);
             preparedStatement.setString(11, github_url);
             preparedStatement.setString(12, portfolio_url);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
-            return new Student(resultSet.getInt("id") ,f_name,l_name, session_key, username, p_word, email, programming_langs, desired_location, linkedin_url, resume_url, github_url, portfolio_url);
+            return new Student(resultSet.getInt("id") ,f_name,l_name, session_key, username, p_word, email, programming_langs, desired_location, position_level, resume_url, github_url, portfolio_url);
         } catch (SQLException ex){
             System.out.println(ex.getMessage());
             return null;
@@ -60,7 +60,7 @@ public class StudentRepostiory {
                         resultSet.getString("email"),
                         resultSet.getString("programming_langs"),
                         resultSet.getString("desired_location"),
-                        resultSet.getString("linkedin_url"),
+                        resultSet.getString("position_level"),
                         resultSet.getString("resume_url"),
                         resultSet.getString("github_url"),
                         resultSet.getString("portfolio_url")));
@@ -186,7 +186,7 @@ public class StudentRepostiory {
                     resultSet.getString("email"),
                     resultSet.getString("programming_langs"),
                     resultSet.getString("desired_location"),
-                    resultSet.getString("linkedin_url"),
+                    resultSet.getString("position_level"),
                     resultSet.getString("resume_url"),
                     resultSet.getString("github_url"),
                     resultSet.getString("portfolio_url"));
@@ -216,7 +216,7 @@ public class StudentRepostiory {
                     resultSet.getString("email"),
                     resultSet.getString("programming_langs"),
                     resultSet.getString("desired_location"),
-                    resultSet.getString("linkedin_url"),
+                    resultSet.getString("position_level"),
                     resultSet.getString("resume_url"),
                     resultSet.getString("github_url"),
                     resultSet.getString("portfolio_url"));

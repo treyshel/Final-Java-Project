@@ -15,7 +15,7 @@ function signup() {
             email: $('#email-input').val(),
             programming_langs: $('#programming-langs-input').val(),
             desired_location: $('#desired-location-input').val(),
-            linkedin_url: $('#linkedin-url-input').val(),
+            position_level: $('#position-level-input').val(),
             resume_url: $('#resume-url-input').val(),
             github_url: $('#github-url-input').val(),
             portfolio_url: $('#portfolio-url-input').val()
@@ -42,7 +42,7 @@ function signup() {
             email: $('#email-input').val(),
             programming_lang: $('#programming-langs-input').val(),
             desired_location: $('#desired-location-input').val(),
-            linkedin_url: $('#linkedin-url-input').val(),
+            position_level: $('#position-level-input').val(),
             resume_url: $('#resume-url-input').val(),
             github_url: $('#github-url-input').val(),
             portfolio_url: $('#portfolio-url-input').val()

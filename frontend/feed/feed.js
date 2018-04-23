@@ -52,8 +52,8 @@ function showFeedData() {
         '<h2>Desired Location: ' +
         PAGE_DATA.desired_location +
         '</h2>' +
-        '<h2>LinkedIn URL: ' +
-        PAGE_DATA.linkedin_url +
+        '<h2>Position Level: ' +
+        PAGE_DATA.position_level +
         '</h2>' +
         '<a href="https://' +
         PAGE_DATA.portfolio_url +
@@ -95,18 +95,16 @@ function showMatchingLocation() {
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>';
-        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
-        // PAGE_DATA[i].email +
-        // '</p><p>Company Location: ' +
-        // PAGE_DATA[i].company_location +
-        // '</p><p>Languages for Position: ' +
-        // PAGE_DATA[i].langs_used +
-        // '</p><p>Recruiter Name: ' +
-        // PAGE_DATA[i].f_name +
-        // ' ' +
-        // PAGE_DATA[i].l_name +
-        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-        // '</div>';
+        '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
+            PAGE_DATA[i].email +
+            '</p><p>Company Location: ' +
+            PAGE_DATA[i].company_location +
+            '</p>><p>Recruiter Name: ' +
+            PAGE_DATA[i].f_name +
+            ' ' +
+            PAGE_DATA[i].l_name +
+            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</div>';
     }
     return html;
 }
@@ -119,18 +117,14 @@ function showMatchingPositionLevel() {
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>';
-        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
-        // PAGE_DATA[i].email +
-        // '</p><p>Company Location: ' +
-        // PAGE_DATA[i].company_location +
-        // '</p><p>Languages for Position: ' +
-        // PAGE_DATA[i].langs_used +
-        // '</p><p>Recruiter Name: ' +
-        // PAGE_DATA[i].f_name +
-        // ' ' +
-        // PAGE_DATA[i].l_name +
-        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-        // '</div>';
+        '<div class="panel-body">Information:<br><p>Languages for Position Level: ' +
+            PAGE_DATA[i].position_level +
+            '</p><p>Recruiter Name: ' +
+            PAGE_DATA[i].f_name +
+            ' ' +
+            PAGE_DATA[i].l_name +
+            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</div>';
     }
     return html;
 }
@@ -143,18 +137,14 @@ function showMatchingLanguage() {
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>';
-        // '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
-        // PAGE_DATA[i].email +
-        // '</p><p>Company Location: ' +
-        // PAGE_DATA[i].company_location +
-        // '</p><p>Languages for Position: ' +
-        // PAGE_DATA[i].langs_used +
-        // '</p><p>Recruiter Name: ' +
-        // PAGE_DATA[i].f_name +
-        // ' ' +
-        // PAGE_DATA[i].l_name +
-        // '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-        // '</div>';
+        '<div class="panel-body">Information:<br><p>Languages for Position: ' +
+            PAGE_DATA[i].langs_used +
+            '</p><p>Recruiter Name: ' +
+            PAGE_DATA[i].f_name +
+            ' ' +
+            PAGE_DATA[i].l_name +
+            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</div>';
     }
     return html;
 }

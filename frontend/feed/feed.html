@@ -24,11 +24,13 @@
             <hr class="thicken">
             <nav class="col-sm-3">
                 <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-                    <li class="active">
-                        <a type="submit" id="ProfileInfo">Profile Info</a>
+                    <li>
+                        <a class="active" type="submit" id="ProfileInfo">Profile Info</a>
                     </li>
                     <li>
-                        <a type="submit" id="jobPostings" onclick="Postings()">Job Postings</a>
+                        <a type="submit" id="jobPostings" onclick="Postings()">Job Postings
+                            <!-- <i class="fas fa-caret-square-down"></i> -->
+                        </a>
                     </li>
                     <li>
                         <a type="submit" id="networkConnections">Connections</a>
@@ -43,8 +45,26 @@
             </nav>
             <div class="col-sm-9 feedPage">
             </div>
-            <div class="col-sm-9 postings" hidden>
-                Postings
+            <div class="col-sm-9 jobPostings" hidden>
+                <div class="dropdown" style="float:right">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">FILTER BY&nbsp;
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a id="filterBySameLocation">Same Location</a>
+                        </li>
+                        <li>
+                            <a id="filterBySameLanguage">Same Programming Language</a>
+                        </li>
+                        <li>
+                            <a id="filterBySamePositionLevel">Same Position Level</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-9 postings"></div>
             </div>
             <div class="col-sm-9 connections" hidden>
                 Connections

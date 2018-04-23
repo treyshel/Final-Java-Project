@@ -58,13 +58,13 @@ public class FeedController {
     @CrossOrigin()
     @GetMapping("/student-filter-level")
     public ArrayList<Recruiter> studentFilterByPositionLevel() {
-        return StudentRepostiory.positionLevel();
+        return StudentRepostiory.samePositionLevel();
     }
 
     @CrossOrigin()
     @GetMapping("/recruiter-filter-level")
     public ArrayList<Student> recruiterFilterByPositionLevel() {
-        return RecruiterRepository.positionLevel();
+        return RecruiterRepository.samePositionLevel();
     }
 
     //////// urls for filtering by same language input ////////

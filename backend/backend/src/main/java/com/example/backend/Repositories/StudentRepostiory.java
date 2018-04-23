@@ -42,7 +42,6 @@ public class StudentRepostiory {
         }
     }
 
-
     public static ArrayList<Student> allStudents(){
         try {
             Connection conn = Connect.connectDB();
@@ -80,6 +79,70 @@ public class StudentRepostiory {
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement(
                     "SELECT * FROM recruiter ON JOIN WHERE recruiter.company_location = student.desired_location");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
+            while (resultSet.next()){
+                sameLocation.add(new
+                        Recruiter(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("title"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("position_level"),
+                        resultSet.getString("company_name"),
+                        resultSet.getString("company_location"),
+                        resultSet.getString("langs_used"),
+                        resultSet.getString("website_url")));
+            }
+            conn.close();
+            return sameLocation;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Recruiter> samePositionLevel(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.position_level = student.position_level");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
+            while (resultSet.next()){
+                sameLocation.add(new
+                        Recruiter(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("title"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("position_level"),
+                        resultSet.getString("company_name"),
+                        resultSet.getString("company_location"),
+                        resultSet.getString("langs_used"),
+                        resultSet.getString("website_url")));
+            }
+            conn.close();
+            return sameLocation;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Recruiter> sameLanguage(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM recruiter ON JOIN WHERE recruiter.langs_used = student.programming_langs");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<Recruiter> sameLocation = new ArrayList<Recruiter>();
             while (resultSet.next()){

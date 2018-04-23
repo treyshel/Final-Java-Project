@@ -128,15 +128,6 @@ public class RecruiterRepository {
         }
     }
 
-//    public static ArrayList<Student> sameLanguage() {
-//        try {
-//            Connection conn = Connect.connectDB();
-//            PreparedStatement preparedStatement = conn.prepareStatement(
-//                    "SELECT * FROM student ON JOIN WHERE recruiter.langs_used = student.programming_langs")
-//
-//        }
-//    }
-
     public static ArrayList<Recruiter> allRecruiters(){
         try {
             Connection conn = Connect.connectDB();
@@ -168,6 +159,71 @@ public class RecruiterRepository {
             return null;
         }
     }
+
+    public static ArrayList<Student> samePositionLevel(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM student ON JOIN WHERE recruiter.position_level = student.position_level");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Student> sameLocation = new ArrayList<Student>();
+            while (resultSet.next()){
+                samePositionLevel().add(new
+                        Student(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("programming_langs"),
+                        resultSet.getString("desired_location"),
+                        resultSet.getString("linkedin_url"),
+                        resultSet.getString("resume_url"),
+                        resultSet.getString("github_url"),
+                        resultSet.getString("portfolio_url")));
+            }
+            conn.close();
+            return sameLocation;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static ArrayList<Student> sameLanguage(){
+        try {
+            Connection conn = Connect.connectDB();
+            PreparedStatement preparedStatement = conn.prepareStatement(
+                    "SELECT * FROM student ON JOIN WHERE recruiter.langs_used = student.programming_langs");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<Student> sameLocation = new ArrayList<Student>();
+            while (resultSet.next()){
+                samePositionLevel().add(new
+                        Student(resultSet.getInt("id"),
+                        resultSet.getString("f_name"),
+                        resultSet.getString("l_name"),
+                        resultSet.getString("session_key"),
+                        resultSet.getString("username"),
+                        resultSet.getString("p_word"),
+                        resultSet.getString("email"),
+                        resultSet.getString("programming_langs"),
+                        resultSet.getString("desired_location"),
+                        resultSet.getString("linkedin_url"),
+                        resultSet.getString("resume_url"),
+                        resultSet.getString("github_url"),
+                        resultSet.getString("portfolio_url")));
+            }
+            conn.close();
+            return sameLocation;
+        }
+        catch (SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 
     public static boolean byeByeSessionKey(String username) {
         try {

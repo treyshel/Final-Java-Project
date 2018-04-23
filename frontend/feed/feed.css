@@ -10,6 +10,6 @@
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-/* .active {
-    background-color: blue;
-} */
+.active {
+    background-color: rgb(13, 255, 215);
+}

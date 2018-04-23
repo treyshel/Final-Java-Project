@@ -3,28 +3,28 @@ PAGE_DATA = new Object();
 // **********side tab functionality***********
 
 $('#ProfileInfo').click(function() {
-    $('.postings').hide(500);
+    $('.jobPostings').hide(500);
     $('.connections').hide(500);
-    $('#networkConnections').removeClass('active');
     $('#jobPostings').removeClass('active');
-    $('#ProfileInfoTab').addClass('active');
+    $('#networkConnections').removeClass('active');
+    $('#ProfileInfo').addClass('active');
     $('.feedPage').show(500);
 });
 
 $('#jobPostings').click(function() {
     $('.feedPage').hide(500);
     $('.connections').hide(500);
+    $('#ProfileInfo').removeClass('active');
     $('#networkConnections').removeClass('active');
-    $('#ProfileInfoTab').removeClass('active');
     $('#jobPostings').addClass('active');
-    $('.postings').show(500);
+    $('.jobPostings').show(500);
 });
 
 $('#networkConnections').click(function() {
-    $('.postings').hide(500);
     $('.feedPage').hide(500);
+    $('.jobPostings').hide(500);
     $('#jobPostings').removeClass('active');
-    $('#ProfileInfoTab').removeClass('active');
+    $('#ProfileInfo').removeClass('active');
     $('#networkConnections').addClass('active');
     $('.connections').show(500);
 });
@@ -77,7 +77,11 @@ function showJobPostings() {
             PAGE_DATA[i].company_location +
             '</p><p>Languages for Position: ' +
             PAGE_DATA[i].langs_used +
-            '</p></div>' +
+            '</p><p>Recruiter Name: ' +
+            PAGE_DATA[i].f_name +
+            ' ' +
+            PAGE_DATA[i].l_name +
+            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
     }
     return html;
@@ -142,6 +146,53 @@ function deleteAccount() {
 function Postings() {
     $.ajax({
         url: 'http://localhost:8080/allRecruiters',
+        method: 'Get',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function(response) {
+        console.log(response);
+        PAGE_DATA = response;
+        $('.postings').html(showJobPostings());
+    });
+}
+
+// ********* ajax request for filtered postings *************
+
+function filteredByMatchingLocation() {
+    $.ajax({
+        url: 'http://localhost:8080/student-filter-location',
+        method: 'Get',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function(response) {
+        console.log(response);
+        PAGE_DATA = response;
+        $('.postings').html(showJobPostings());
+    });
+}
+
+function filteredByMatchingPositionLevel() {
+    $.ajax({
+        url: 'http://localhost:8080/student-filter-level',
+        method: 'Get',
+        dataType: 'json',
+        crossDomain: true,
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    }).then(function(response) {
+        console.log(response);
+        PAGE_DATA = response;
+        $('.postings').html(showJobPostings());
+    });
+}
+
+function filteredByMatchingLanguage() {
+    $.ajax({
+        url: 'http://localhost:8080/student-filter-language',
         method: 'Get',
         dataType: 'json',
         crossDomain: true,

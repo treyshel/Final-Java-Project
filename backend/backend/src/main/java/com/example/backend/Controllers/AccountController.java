@@ -17,6 +17,8 @@ public class AccountController {
     @Value("${app.salt}")
     private String salt;
 
+    //////// floating function creates the session key ////////
+
     String makeSessionKey() {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String sessionKey = "";
@@ -28,6 +30,9 @@ public class AccountController {
         }
         return sessionKey;
     }
+
+    //////// url to login either or ////////
+
     @CrossOrigin()
     @PostMapping("/student-login")
     public Student studentLogin(@RequestBody Login existingStudent) {
@@ -61,6 +66,8 @@ public class AccountController {
             return null;
         }
     }
+
+    //////// urls to signup either or ////////
 
     @CrossOrigin()
     @PostMapping("/student-signup")
@@ -104,6 +111,8 @@ public class AccountController {
         );
     }
 
+    //////// urls to delete account ////////
+
     @CrossOrigin()
     @PostMapping("/student-deleteAccount/{username}")
     public boolean studentDeleteAccount(@PathVariable String username) {
@@ -116,6 +125,7 @@ public class AccountController {
         return RecruiterRepository.deleteAccount(username);
     }
 
+    //////// urls to logout ////////
 
     @CrossOrigin()
     @PostMapping("/student-logout/{username}")
@@ -125,8 +135,8 @@ public class AccountController {
 
     @CrossOrigin()
     @GetMapping("/recruiter-logout/{username}")
-    public ArrayList<Student> recruiterLogout() {
-        return RecruiterRepository.sameLocation();
+    public boolean recruiterLogout(@PathVariable String username) {
+        return RecruiterRepository.byeByeSessionKey(username);
     }
 
 }

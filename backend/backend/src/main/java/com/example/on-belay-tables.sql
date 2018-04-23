@@ -7,9 +7,9 @@ CREATE TABLE student(
     username text,
     p_word text,
     email text,
+    position_level text,
     programming_langs text,
     desired_location text,
-    linkedin_url text,
     resume_url text,
     github_url text,
     portfolio_url text

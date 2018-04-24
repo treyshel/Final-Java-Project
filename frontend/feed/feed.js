@@ -194,7 +194,7 @@ function logout() {
 function deleteAccount() {
     var username = getParameterByUsername('username');
     $.ajax({
-        url: 'http://localhost:8080/deleteAccount/' + username,
+        url: 'http://localhost:8080/student-deleteAccount/' + username,
         method: 'Post',
         dataType: 'json',
         crossDomain: true,

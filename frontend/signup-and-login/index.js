@@ -50,6 +50,16 @@ function signup() {
     );
 }
 
+$('.student').on('click', function() {
+    $('.student-info').show(500);
+    $('.student-or-recruiter').hide(500);
+});
+
+$('.recruiter').on('click', function() {
+    $('.recruiter-info').show(500);
+    $('.student-or-recruiter').hide(500);
+});
+
 $('#sign-up-form').on('submit', function(event) {
     event.preventDefault();
     signup();

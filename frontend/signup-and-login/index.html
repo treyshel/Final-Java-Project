@@ -19,166 +19,338 @@
     <div id="exTab3" class="container">
         <div class="col-lg-4 col-lg-offset-4">
             <legend>Welcome</legend>
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#1b" data-toggle="tab">Sign Up</a>
-                </li>
-                <li>
-                    <a href="#2b" data-toggle="tab">Login</a>
-                </li>
-            </ul>
-            <div class="tab-content clearfix">
-                <div class="tab-pane active" id="1b">
-                    <form id="sign-up-form">
-                        <fieldset>
-                            <div id="first-signup-form">
-                                <div class="form-group">
-                                    <label for="exampleInputFirstName">First Name</label>
-                                    <input type="firstname" class="form-control" id="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
-                                        required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
+            <div class="student-or-recruiter">
+                <button type="submit" class="btn btn-outline-primary student">Student</button>
+                <button type="submit" class="btn btn-outline-primary recruiter">Employer</button>
+            </div>
+            <div class="student-info" hidden>
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#1b" data-toggle="tab">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#2b" data-toggle="tab">Login</a>
+                    </li>
+                </ul>
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1b">
+                        <form class="sign-up-form">
+                            <fieldset>
+                                <div class="first-signup-form">
+                                    <div class="form-group">
+                                        <label for="exampleInputFirstName">First Name</label>
+                                        <input type="firstname" class="form-control" class="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputLastName">Last Name</label>
+                                        <input type="lastname" class="form-control" class="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername">Username</label>
+                                        <input type="username" class="form-control" class="username-input" placeholder="Username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword">Password</label>
+                                        <input type="password" class="form-control" class="password-input" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail">Email address</label>
+                                        <input type="email" class="form-control" class="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputLastName">Last Name</label>
-                                    <input type="lastname" class="form-control" id="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
-                                        required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                <div class="second-signup-form" hidden>
+                                    <div class="form-group">
+                                        <label for="exampleProgrammingLangs">Desired language to work with:</label>
+                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="C# / ASP.NET">C# / ASP.NET</option>
+                                            <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
+                                            <option value="Java / Spring">Java / Spring</option>
+                                            <option value="Python / Django or Flask">Python / Django or Flask</option>
+                                            <option value="Ruby / Ruby On Rails">Ruby / Ruby On Rails</option>
+                                            <option value="Scala / Play or Spring">Scala / Play or Spring</option>
+                                            <option value="C++ / Qt">C++ / Qt</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleDesiredLocation">Desired Location</label>
+                                        <select class="location-input" name="desired-location-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="Alabama">Alabama</option>
+                                            <option value="Alaska">Alaska</option>
+                                            <option value="Arizona">Arizona</option>
+                                            <option value="Arkansas">Arkansas</option>
+                                            <option value="California">California</option>
+                                            <option value="Colorado">Colorado</option>
+                                            <option value="Connecticut">Connecticut</option>
+                                            <option value="Delaware">Delaware</option>
+                                            <option value="Florida">Florida</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Idaho">Idaho</option>
+                                            <option value="Illinois">Illinois</option>
+                                            <option value="Indiana">Indiana</option>
+                                            <option value="Iowa">Iowa</option>
+                                            <option value="Kansas">Kansas</option>
+                                            <option value="Kentucky">Kentucky</option>
+                                            <option value="Louisiana">Louisiana</option>
+                                            <option value="Maine">Maine</option>
+                                            <option value="Massachusetts">Massachusetts</option>
+                                            <option value="Michigan">Michigan</option>
+                                            <option value="Minnesota">Minnesota</option>
+                                            <option value="Mississippi">Mississippi</option>
+                                            <option value="Missouri">Missouri</option>
+                                            <option value="Montana">Montana</option>
+                                            <option value="Nebraska">Nebraska</option>
+                                            <option value="Nevada">Nevada</option>
+                                            <option value="New Hampshire">New Hampshire</option>
+                                            <option value="New Jersey">New Jersey</option>
+                                            <option value="New Mexico">New Mexico</option>
+                                            <option value="New York">New York</option>
+                                            <option value="North Carolina">North Carolina</option>
+                                            <option value="North Dakota">North Dakota</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Oklahoma">Oklahoma</option>
+                                            <option value="Oregon">Oregon</option>
+                                            <option value="Pennsylvania">Pennsylvania</option>
+                                            <option value="Rhode Island">Rhode Island</option>
+                                            <option value="South Carolina">South Carolina</option>
+                                            <option value="South Dakota">South Dakota</option>
+                                            <option value="Tennessee">Tennessee</option>
+                                            <option value="Texas">Texas</option>
+                                            <option value="Utah">Utah</option>
+                                            <option value="Vermont">Vermont</option>
+                                            <option value="Virginia">Virginia</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="West Virginia">West Virginia</option>
+                                            <option value="Wisconsin">Wisconsin</option>
+                                            <option value="Wyoming">Wyoming</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="examplePositionLevel">Position Level</label>
+                                        <select class="position-level-input" name="position-level-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="Entry Level">Entry Level</option>
+                                            <option value="Mid Level">Mid Level</option>
+                                            <option value="Senior Level">Senior Level</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleResumeUrl">Resume Url</label>
+                                        <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleGithubUrl">Github Url</label>
+                                        <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="examplePortfolioUrl">Portfolio Url</label>
+                                        <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
                                 </div>
+                            </fieldset>
+                            <div id="signup-button" hidden>
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="2b">
+                        <form id="login-form">
+                            <fieldset>
                                 <div class="form-group">
                                     <label for="exampleInputUsername">Username</label>
-                                    <input type="username" class="form-control" id="username-input" placeholder="Username" required>
+                                    <input type="username" class="form-control" id="login-username-input" placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword">Password</label>
-                                    <input type="password" class="form-control" id="password-input" placeholder="Password" required>
+                                    <input type="password" class="form-control" id="login-password-input" placeholder="Password" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail">Email address</label>
-                                    <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
-                            </div>
-                            <div id="second-signup-form" hidden>
-                                <div class="form-group">
-                                    <label for="exampleProgrammingLangs">Programming Langs</label>
-                                    <select id="programming-langs-input" name="programming-langs-input" class="form-control">
-                                        <option value="" selected></option>
-                                        <option value="C# / ASP.NET">C# / ASP.NET</option>
-                                        <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
-                                        <option value="Java / Spring">Java / Spring</option>
-                                        <option value="Python / Django or Flask">Python / Django or Flask</option>
-                                        <option value="Ruby / Ruby On Rails">Ruby / Ruby On Rails</option>
-                                        <option value="Scala / Play or Spring">Scala / Play or Spring</option>
-                                        <option value="C++ / Qt">C++ / Qt</option>
-                                    </select>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleDesiredLocation">Desired Location</label>
-                                    <select id="desired-location-input" name="desired-location-input" class="form-control">
-                                        <option value="" selected></option>
-                                        <option value="Alabama">Alabama</option>
-                                        <option value="Alaska">Alaska</option>
-                                        <option value="Arizona">Arizona</option>
-                                        <option value="Arkansas">Arkansas</option>
-                                        <option value="California">California</option>
-                                        <option value="Colorado">Colorado</option>
-                                        <option value="Connecticut">Connecticut</option>
-                                        <option value="Delaware">Delaware</option>
-                                        <option value="Florida">Florida</option>
-                                        <option value="Georgia">Georgia</option>
-                                        <option value="Hawaii">Hawaii</option>
-                                        <option value="Idaho">Idaho</option>
-                                        <option value="Illinois">Illinois</option>
-                                        <option value="Indiana">Indiana</option>
-                                        <option value="Iowa">Iowa</option>
-                                        <option value="Kansas">Kansas</option>
-                                        <option value="Kentucky">Kentucky</option>
-                                        <option value="Louisiana">Louisiana</option>
-                                        <option value="Maine">Maine</option>
-                                        <option value="Massachusetts">Massachusetts</option>
-                                        <option value="Michigan">Michigan</option>
-                                        <option value="Minnesota">Minnesota</option>
-                                        <option value="Mississippi">Mississippi</option>
-                                        <option value="Missouri">Missouri</option>
-                                        <option value="Montana">Montana</option>
-                                        <option value="Nebraska">Nebraska</option>
-                                        <option value="Nevada">Nevada</option>
-                                        <option value="New Hampshire">New Hampshire</option>
-                                        <option value="New Jersey">New Jersey</option>
-                                        <option value="New Mexico">New Mexico</option>
-                                        <option value="New York">New York</option>
-                                        <option value="North Carolina">North Carolina</option>
-                                        <option value="North Dakota">North Dakota</option>
-                                        <option value="Ohio">Ohio</option>
-                                        <option value="Oklahoma">Oklahoma</option>
-                                        <option value="Oregon">Oregon</option>
-                                        <option value="Pennsylvania">Pennsylvania</option>
-                                        <option value="Rhode Island">Rhode Island</option>
-                                        <option value="South Carolina">South Carolina</option>
-                                        <option value="South Dakota">South Dakota</option>
-                                        <option value="Tennessee">Tennessee</option>
-                                        <option value="Texas">Texas</option>
-                                        <option value="Utah">Utah</option>
-                                        <option value="Vermont">Vermont</option>
-                                        <option value="Virginia">Virginia</option>
-                                        <option value="Washington">Washington</option>
-                                        <option value="West Virginia">West Virginia</option>
-                                        <option value="Wisconsin">Wisconsin</option>
-                                        <option value="Wyoming">Wyoming</option>
-                                    </select>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="examplePositionLevel">Position Level</label>
-                                    <select id="position-level-input" name="position-level-input" class="form-control">
-                                        <option value="" selected></option>
-                                        <option value="Entry Level">Entry Level</option>
-                                        <option value="Mid Level">Mid Level</option>
-                                        <option value="Senior Level">Senior Level</option>
-                                    </select>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleResumeUrl">Resume Url</label>
-                                    <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url"
-                                        required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleGithubUrl">Github Url</label>
-                                    <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url"
-                                        required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="examplePortfolioUrl">Portfolio Url</label>
-                                    <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url"
-                                        required>
-                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div id="signup-button" hidden>
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="tab-pane" id="2b">
-                    <form id="login-form">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="exampleInputUsername">Username</label>
-                                <input type="username" class="form-control" id="login-username-input" placeholder="Username" required>
+            </div>
+            <div class="recruiter-info" hidden>
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#1b" data-toggle="tab">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#2b" data-toggle="tab">Login</a>
+                    </li>
+                </ul>
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1b">
+                        <form class="sign-up-form">
+                            <fieldset>
+                                <div class="first-signup-form">
+                                    <div class="form-group">
+                                        <label for="exampleTitle">Title</label>
+                                        <select id="title-input" name="title-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="Dr.">Dr.</option>
+                                            <option value="Mr.">Mr.</option>
+                                            <option value="Mrs.">Mrs. (married)</option>
+                                            <option value="Ms.">Ms.</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFirstName">First Name</label>
+                                        <input type="firstname" class="form-control" class="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputLastName">Last Name</label>
+                                        <input type="lastname" class="form-control" class="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername">Username</label>
+                                        <input type="username" class="form-control" class="username-input" placeholder="Username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword">Password</label>
+                                        <input type="password" class="form-control" class="password-input" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail">Email address</label>
+                                        <input type="email" class="form-control" class="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
+                                </div>
+                                <div class="second-signup-form" hidden>
+                                    <div class="form-group">
+                                        <label for="exampleProgrammingLangs">What kind of developer are you looking for?</label>
+                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="C# / ASP.NET">C# / ASP.NET</option>
+                                            <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
+                                            <option value="Java / Spring">Java / Spring</option>
+                                            <option value="Python / Django or Flask">Python / Django or Flask</option>
+                                            <option value="Ruby / Ruby On Rails">Ruby / Ruby On Rails</option>
+                                            <option value="Scala / Play or Spring">Scala / Play or Spring</option>
+                                            <option value="C++ / Qt">C++ / Qt</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleDesiredLocation">Where is your company located?</label>
+                                        <select class="location-input" name="desired-location-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="Alabama">Alabama</option>
+                                            <option value="Alaska">Alaska</option>
+                                            <option value="Arizona">Arizona</option>
+                                            <option value="Arkansas">Arkansas</option>
+                                            <option value="California">California</option>
+                                            <option value="Colorado">Colorado</option>
+                                            <option value="Connecticut">Connecticut</option>
+                                            <option value="Delaware">Delaware</option>
+                                            <option value="Florida">Florida</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Idaho">Idaho</option>
+                                            <option value="Illinois">Illinois</option>
+                                            <option value="Indiana">Indiana</option>
+                                            <option value="Iowa">Iowa</option>
+                                            <option value="Kansas">Kansas</option>
+                                            <option value="Kentucky">Kentucky</option>
+                                            <option value="Louisiana">Louisiana</option>
+                                            <option value="Maine">Maine</option>
+                                            <option value="Massachusetts">Massachusetts</option>
+                                            <option value="Michigan">Michigan</option>
+                                            <option value="Minnesota">Minnesota</option>
+                                            <option value="Mississippi">Mississippi</option>
+                                            <option value="Missouri">Missouri</option>
+                                            <option value="Montana">Montana</option>
+                                            <option value="Nebraska">Nebraska</option>
+                                            <option value="Nevada">Nevada</option>
+                                            <option value="New Hampshire">New Hampshire</option>
+                                            <option value="New Jersey">New Jersey</option>
+                                            <option value="New Mexico">New Mexico</option>
+                                            <option value="New York">New York</option>
+                                            <option value="North Carolina">North Carolina</option>
+                                            <option value="North Dakota">North Dakota</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Oklahoma">Oklahoma</option>
+                                            <option value="Oregon">Oregon</option>
+                                            <option value="Pennsylvania">Pennsylvania</option>
+                                            <option value="Rhode Island">Rhode Island</option>
+                                            <option value="South Carolina">South Carolina</option>
+                                            <option value="South Dakota">South Dakota</option>
+                                            <option value="Tennessee">Tennessee</option>
+                                            <option value="Texas">Texas</option>
+                                            <option value="Utah">Utah</option>
+                                            <option value="Vermont">Vermont</option>
+                                            <option value="Virginia">Virginia</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="West Virginia">West Virginia</option>
+                                            <option value="Wisconsin">Wisconsin</option>
+                                            <option value="Wyoming">Wyoming</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="examplePositionLevel">Experince required for desired developer?</label>
+                                        <select class="position-level-input" name="position-level-input" class="form-control">
+                                            <option value="" selected></option>
+                                            <option value="Entry Level">Entry Level</option>
+                                            <option value="Mid Level">Mid Level</option>
+                                            <option value="Senior Level">Senior Level</option>
+                                        </select>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputCompanyName">Company Name</label>
+                                        <input type="company-name" class="form-control" class="company-name-input" placeholder="Company Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleCompanyWebsiteUrl">Company Webiste Url</label>
+                                        <input type="resume-url" class="form-control" id="website-url-input" aria-describedby="emailHelp" placeholder="Enter Company Url"
+                                            required>
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="signup-button" hidden>
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword">Password</label>
-                                <input type="password" class="form-control" id="login-password-input" placeholder="Password" required>
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="2b">
+                        <form id="login-form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername">Username</label>
+                                    <input type="username" class="form-control" id="login-username-input" placeholder="Username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Password</label>
+                                    <input type="password" class="form-control" id="login-password-input" placeholder="Password" required>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

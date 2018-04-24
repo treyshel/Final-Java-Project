@@ -1,3 +1,56 @@
+function recruiterSignup() {
+    var username = $('.username-input').val();
+    window.localStorage.setItem('username', username);
+    $.ajax({
+        url: 'http://localhost:8080/recruiter-signup',
+        method: 'Post',
+        dataType: 'json',
+        crossDomain: true,
+
+        data: JSON.stringify({
+            title: $('#title-input').val(),
+            f_name: $('.first-name-input').val(),
+            l_name: $('.last-name-input').val(),
+            username: username,
+            p_word: $('.password-input').val(),
+            email: $('.email-input').val(),
+            langs_used: $('.programming-langs-input').val(),
+            company_name: $('#company-name-input').val(),
+            company_location: $('.location-input').val(),
+            position_level: $('.position-level-input').val(),
+            website_url: $('#website-url-input')
+        }),
+        contentType: 'application/json',
+        mimeType: 'application/json'
+    })
+        .then(function handleFeedResponse(response) {
+            var PAGE_DATA = response;
+            console.log(PAGE_DATA);
+            window.location.replace(
+                '../feed/feed.html?username=' + $('.username-input').val()
+            );
+        })
+        .catch(function handleFeedError(err) {
+            console.log(err);
+        });
+    console.log(
+        JSON.stringify({
+            title: $('#title-input').val(),
+            f_name: $('.first-name-input').val(),
+            l_name: $('.last-name-input').val(),
+            username: $('.username-input').val(),
+            p_word: $('.password-input').val(),
+            email: $('.email-input').val(),
+            langs_used: $('.programming-langs-input').val(),
+            company_name: $('#company-name-input').val(),
+            company_location: $('.location-input').val(),
+            position_level: $('.position-level-input').val(),
+            website_url: $('#website-url-input')
+        })
+    );
+}
+
+// *********** student work
 function studentSignup() {
     var username = $('.username-input').val();
     window.localStorage.setItem('username', username);
@@ -27,7 +80,7 @@ function studentSignup() {
             var PAGE_DATA = response;
             console.log(PAGE_DATA);
             window.location.replace(
-                '../feed/feed.html?username=' + $('#username-input').val()
+                '../feed/feed.html?username=' + $('.username-input').val()
             );
         })
         .catch(function handleFeedError(err) {
@@ -60,7 +113,7 @@ $('.recruiter').on('click', function() {
     $('.student-or-recruiter').hide(500);
 });
 
-$('.sign-up-form').on('submit', function(event) {
+$('.student-sign-up-form').on('submit', function(event) {
     event.preventDefault();
     studentSignup();
 });
@@ -71,7 +124,7 @@ $('.next-form-button').on('click', function() {
     $('.signup-button').attr('hidden', false);
 });
 
-$('.login-form').on('submit', function(event) {
+$('.student-login-form').on('submit', function(event) {
     event.preventDefault();
     studentLogin();
 });

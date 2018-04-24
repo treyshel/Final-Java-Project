@@ -1,5 +1,5 @@
-function signup() {
-    var username = $('#username-input').val();
+function studentSignup() {
+    var username = $('.username-input').val();
     window.localStorage.setItem('username', username);
     $.ajax({
         url: 'http://localhost:8080/student-signup',
@@ -8,14 +8,14 @@ function signup() {
         crossDomain: true,
 
         data: JSON.stringify({
+            f_name: $('.first-name-input').val(),
+            l_name: $('.last-name-input').val(),
             username: username,
-            f_name: $('#first-name-input').val(),
-            l_name: $('#last-name-input').val(),
-            p_word: $('#password-input').val(),
-            email: $('#email-input').val(),
-            programming_langs: $('#programming-langs-input').val(),
-            desired_location: $('#desired-location-input').val(),
-            position_level: $('#position-level-input').val(),
+            p_word: $('.password-input').val(),
+            email: $('.email-input').val(),
+            programming_lang: $('.programming-langs-input').val(),
+            desired_location: $('.location-input').val(),
+            position_level: $('.position-level-input').val(),
             resume_url: $('#resume-url-input').val(),
             github_url: $('#github-url-input').val(),
             portfolio_url: $('#portfolio-url-input').val()
@@ -35,14 +35,14 @@ function signup() {
         });
     console.log(
         JSON.stringify({
-            f_name: $('#first-name-input').val(),
-            l_name: $('#last-name-input').val(),
-            username: $('#username-input').val(),
-            p_word: $('#password-input').val(),
-            email: $('#email-input').val(),
-            programming_lang: $('#programming-langs-input').val(),
-            desired_location: $('#desired-location-input').val(),
-            position_level: $('#position-level-input').val(),
+            f_name: $('.first-name-input').val(),
+            l_name: $('.last-name-input').val(),
+            username: $('.username-input').val(),
+            p_word: $('.password-input').val(),
+            email: $('.email-input').val(),
+            programming_lang: $('.programming-langs-input').val(),
+            desired_location: $('.location-input').val(),
+            position_level: $('.position-level-input').val(),
             resume_url: $('#resume-url-input').val(),
             github_url: $('#github-url-input').val(),
             portfolio_url: $('#portfolio-url-input').val()
@@ -60,27 +60,27 @@ $('.recruiter').on('click', function() {
     $('.student-or-recruiter').hide(500);
 });
 
-$('#sign-up-form').on('submit', function(event) {
+$('.sign-up-form').on('submit', function(event) {
     event.preventDefault();
-    signup();
+    studentSignup();
 });
 
 $('.next-form-button').on('click', function() {
-    $('#first-signup-form').attr('hidden', true);
-    $('#second-signup-form').attr('hidden', false);
-    $('#signup-button').attr('hidden', false);
+    $('.first-signup-form').attr('hidden', true);
+    $('.second-signup-form').attr('hidden', false);
+    $('.signup-button').attr('hidden', false);
 });
 
-$('#login-form').on('submit', function(event) {
+$('.login-form').on('submit', function(event) {
     event.preventDefault();
-    login();
+    studentLogin();
 });
 
-function login() {
+function studentLogin() {
     console.log(
         JSON.stringify({
-            username: $('#login-username-input').val(),
-            p_word: $('#login-password-input').val()
+            username: $('.login-username-input').val(),
+            p_word: $('.login-password-input').val()
         })
     );
     $.ajax({
@@ -89,8 +89,8 @@ function login() {
         dataType: 'json',
         crossDomain: true,
         data: JSON.stringify({
-            username: $('#login-username-input').val(),
-            p_word: $('#login-password-input').val()
+            username: $('.login-username-input').val(),
+            p_word: $('.login-password-input').val()
         }),
         contentType: 'application/json',
         mimeType: 'application/json'

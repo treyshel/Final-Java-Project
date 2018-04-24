@@ -94,12 +94,12 @@ function showMatchingLocation() {
             '<div class="panel panel-default">' +
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
-            '</div>';
-        '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
+            '</div>' +
+            '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
             PAGE_DATA[i].email +
             '</p><p>Company Location: ' +
             PAGE_DATA[i].company_location +
-            '</p>><p>Recruiter Name: ' +
+            '</p><p>Recruiter Name: ' +
             PAGE_DATA[i].f_name +
             ' ' +
             PAGE_DATA[i].l_name +
@@ -116,8 +116,8 @@ function showMatchingPositionLevel() {
             '<div class="panel panel-default">' +
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
-            '</div>';
-        '<div class="panel-body">Information:<br><p>Languages for Position Level: ' +
+            '</div>' +
+            '<div class="panel-body">Information:<br><p>Languages for Position Level: ' +
             PAGE_DATA[i].position_level +
             '</p><p>Recruiter Name: ' +
             PAGE_DATA[i].f_name +
@@ -136,8 +136,8 @@ function showMatchingLanguage() {
             '<div class="panel panel-default">' +
             '<div class="panel-heading">Company: ' +
             PAGE_DATA[i].company_name +
-            '</div>';
-        '<div class="panel-body">Information:<br><p>Languages for Position: ' +
+            '</div>' +
+            '<div class="panel-body">Information:<br><p>Languages for Position: ' +
             PAGE_DATA[i].langs_used +
             '</p><p>Recruiter Name: ' +
             PAGE_DATA[i].f_name +
@@ -180,7 +180,7 @@ $(function() {
 function logout() {
     var username = getParameterByUsername('username');
     $.ajax({
-        url: 'http://localhost:8080/logout/' + username,
+        url: 'http://localhost:8080/student-logout/' + username,
         method: 'Post',
         dataType: 'json',
         crossDomain: true,

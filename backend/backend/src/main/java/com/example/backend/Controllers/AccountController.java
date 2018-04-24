@@ -83,7 +83,7 @@ public class AccountController {
                 newStudent.email,
                 newStudent.programming_langs,
                 newStudent.desired_location,
-                newStudent.linkedin_url,
+                newStudent.position_level,
                 newStudent.resume_url,
                 newStudent.github_url,
                 newStudent.portfolio_url

@@ -38,10 +38,12 @@ CREATE TABLE connections (
         );
 
 -- INSERT INTO student(f_name, l_name, username, p_word, email) VALUES ('Trey', 'Shelton', 'treyshel', 'BASECAMP', 'tshelton@basecampcodingacademy.org');
-INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Vale', 'Alvarez', 'Mr.', '', 'valvarez', 'papaV', 'valvarez@basecampcodingacademy.org', 'Entry Level', 'C Spire', 'Mississippi', 'Java / Spring', 'www.cspire.com');
-INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Sean', 'Alvarez', 'Mr.', '', 'seanalvarez', 'papaVdd', 'valvarez@basecampcodingacademy.org', 'Mid Level', 'Renasant', 'Alabama', 'C# / ASP.NET', 'www.renasant.com');
-INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Anthony', 'Shelly', 'Mr.', '', 'anthonyalvarez', 'papdddaV', 'valvarez@basecampcodingacademy.org', 'Mid Level', 'FedEx', 'Tennessee', 'Ruby / Ruby On Rails', 'www.fedex.com');
-INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Nate', 'Clark', 'Mr.', '', 'clarkalvarez', 'papaeeeV', 'valvarez@basecampcodingacademy.org', 'Senior Level', 'C Spire', 'Alabama', 'C++ / Qt', 'www.cspire.com');
+
+
+--INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Vale', 'Alvarez', 'Mr.', '', 'valvarez', 'papaV', 'valvarez@basecampcodingacademy.org', 'Entry Level', 'C Spire', 'Mississippi', 'Java / Spring', 'www.cspire.com');
+--INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Sean', 'Alvarez', 'Mr.', '', 'seanalvarez', 'papaVdd', 'valvarez@basecampcodingacademy.org', 'Mid Level', 'Renasant', 'Alabama', 'C# / ASP.NET', 'www.renasant.com');
+--INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Anthony', 'Shelly', 'Mr.', '', 'anthonyalvarez', 'papdddaV', 'valvarez@basecampcodingacademy.org', 'Mid Level', 'FedEx', 'Tennessee', 'Ruby / Ruby On Rails', 'www.fedex.com');
+--INSERT INTO recruiter(f_name, l_name, title, session_key, username, p_word, email, position_level, company_name, company_location, langs_used, website_url) VALUES ('Nate', 'Clark', 'Mr.', '', 'clarkalvarez', 'papaeeeV', 'valvarez@basecampcodingacademy.org', 'Senior Level', 'C Spire', 'Alabama', 'C++ / Qt', 'www.cspire.com');
 
 -- INSERT INTO student_desc(student_id, linkedin_url, resume_url, github_url, portfolio_url) VALUES (1, 'https://www.linkedin.com/feed/', 'https://www.resume.com/trey/', 'https://www.github.com/treyshel/', 'https://www.treyshel.github.io');
 -- INSERT INTO student_desc(student_id, linkedin_url, resume_url, github_url, portfolio_url) VALUES (2, 'https://www.linkedin.com/feed/', 'https://www.resume.com/vale/', 'https://www.github.com/vale/', 'https://www.valvarez.github.io');

@@ -34,40 +34,41 @@
                 </ul>
                 <div class="tab-content clearfix">
                     <div class="tab-pane active" id="1b">
-                        <form class="sign-up-form">
+                        <form id="student-signup-form">
                             <fieldset>
-                                <div class="first-signup-form">
+                                <div id="first-signup-form">
                                     <div class="form-group">
                                         <label for="exampleInputFirstName">First Name</label>
-                                        <input type="firstname" class="form-control" class="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
+                                        <input type="firstname" class="form-control" id="student-first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
                                             required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputLastName">Last Name</label>
-                                        <input type="lastname" class="form-control" class="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
+                                        <input type="lastname" class="form-control" id="student-last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
                                             required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputUsername">Username</label>
-                                        <input type="username" class="form-control" class="username-input" placeholder="Username" required>
+                                        <input type="username" class="form-control" id="student-username-input" placeholder="Username" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword">Password</label>
-                                        <input type="password" class="form-control" class="password-input" placeholder="Password" required>
+                                        <input type="password" class="form-control" id="student-password-input" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail">Email address</label>
-                                        <input type="email" class="form-control" class="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <input type="email" class="form-control" id="student-email-input" aria-describedby="emailHelp" placeholder="Enter email"
+                                            required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
                                 </div>
-                                <div class="second-signup-form" hidden>
+                                <div id="second-signup-form" hidden>
                                     <div class="form-group">
                                         <label for="exampleProgrammingLangs">Desired language to work with:</label>
-                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control">
+                                        <select id="student-programming-langs-input" name="student-programming-langs-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="C# / ASP.NET">C# / ASP.NET</option>
                                             <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
@@ -81,7 +82,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleDesiredLocation">Desired Location</label>
-                                        <select class="location-input" name="desired-location-input" class="form-control">
+                                        <select id="student-location-input" name="student-location-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Alabama">Alabama</option>
                                             <option value="Alaska">Alaska</option>
@@ -137,7 +138,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="examplePositionLevel">Position Level</label>
-                                        <select class="position-level-input" name="position-level-input" class="form-control">
+                                        <select id="student-position-level-input" name="student-position-level-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Entry Level">Entry Level</option>
                                             <option value="Mid Level">Mid Level</option>
@@ -165,21 +166,21 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <div class="signup-button" hidden>
+                            <div class="student-signup-button" hidden>
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="2b">
-                        <form class="login-form">
+                        <form class="student-login-form">
                             <fieldset>
                                 <div class="form-group">
                                     <label for="exampleInputUsername">Username</label>
-                                    <input type="username" class="form-control" class="login-username-input" placeholder="Username" required>
+                                    <input type="username" class="form-control" id="student-login-username-input" placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword">Password</label>
-                                    <input type="password" class="form-control" class="login-password-input" placeholder="Password" required>
+                                    <input type="password" class="form-control" id="student-login-password-input" placeholder="Password" required>
                                 </div>
                             </fieldset>
                             <button type="submit" class="btn btn-primary">Login</button>
@@ -187,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <div class="recruiter-info" hidden>
+            <!-- <div class="recruiter-info" hidden>
                 <ul class="nav nav-pills">
                     <li class="active">
                         <a href="#1b" data-toggle="tab">Sign Up</a>
@@ -198,12 +199,12 @@
                 </ul>
                 <div class="tab-content clearfix">
                     <div class="tab-pane active" id="1b">
-                        <form class="sign-up-form">
+                        <form class="recruiter-signup-form">
                             <fieldset>
                                 <div class="first-signup-form">
                                     <div class="form-group">
                                         <label for="exampleTitle">Title</label>
-                                        <select id="title-input" name="title-input" class="form-control">
+                                        <select id="title-input" name="title-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Dr.">Dr.</option>
                                             <option value="Mr.">Mr.</option>
@@ -241,7 +242,7 @@
                                 <div class="second-signup-form" hidden>
                                     <div class="form-group">
                                         <label for="exampleProgrammingLangs">What kind of developer are you looking for?</label>
-                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control">
+                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="C# / ASP.NET">C# / ASP.NET</option>
                                             <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
@@ -255,7 +256,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleDesiredLocation">Where is your company located?</label>
-                                        <select class="location-input" name="desired-location-input" class="form-control">
+                                        <select class="location-input" name="desired-location-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Alabama">Alabama</option>
                                             <option value="Alaska">Alaska</option>
@@ -311,7 +312,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="examplePositionLevel">Experince required for desired developer?</label>
-                                        <select class="position-level-input" name="position-level-input" class="form-control">
+                                        <select class="position-level-input" name="position-level-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Entry Level">Entry Level</option>
                                             <option value="Mid Level">Mid Level</option>
@@ -331,13 +332,13 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <div class="signup-button" hidden>
+                            <div class="student-signup-button" hidden>
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="2b">
-                        <form class="login-form">
+                        <form class="recruiter-login-form">
                             <fieldset>
                                 <div class="form-group">
                                     <label for="exampleInputUsername">Username</label>
@@ -351,9 +352,9 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </form>
                     </div>
-                </div>
-            </div>
+                </div> -->
         </div>
+    </div>
     </div>
     <script src="index.js"></script>
 </body>

@@ -172,6 +172,7 @@ public class StudentRepostiory {
 
     public static Student byUsername(String username){
         try {
+            System.out.println(username);
             Connection conn = Connect.connectDB();
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM student WHERE username = ?" );
             preparedStatement.setString(1,username);

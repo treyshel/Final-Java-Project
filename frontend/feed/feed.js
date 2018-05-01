@@ -31,7 +31,7 @@ $('#networkConnections').click(function() {
 
 // ************shows feed************
 
-function showFeedData() {
+function showStudentFeedData() {
     console.log(PAGE_DATA);
     return (
         '<h2>Name: ' +
@@ -47,7 +47,7 @@ function showFeedData() {
         PAGE_DATA.email +
         '</h2>' +
         '<h2>Fav Lang: ' +
-        PAGE_DATA.programming_langs +
+        PAGE_DATA.programming_lang +
         '</h2>' +
         '<h2>Desired Location: ' +
         PAGE_DATA.desired_location +
@@ -87,7 +87,7 @@ function showAllJobPostings() {
     return html;
 }
 
-function showMatchingLocation() {
+function showMatchingRecruiterLocation() {
     var html = '';
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
@@ -109,7 +109,7 @@ function showMatchingLocation() {
     return html;
 }
 
-function showMatchingPositionLevel() {
+function showMatchingRecruiterPositionLevel() {
     var html = '';
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
@@ -129,7 +129,7 @@ function showMatchingPositionLevel() {
     return html;
 }
 
-function showMatchingLanguage() {
+function showMatchingRecruiterLanguage() {
     var html = '';
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
@@ -152,7 +152,7 @@ function showMatchingLanguage() {
 function Feed(response) {
     console.log(response);
     PAGE_DATA = response;
-    $('.feedPage').html(showFeedData());
+    $('.feedPage').html(showStudentFeedData());
 }
 
 function getParameterByUsername(username) {
@@ -177,7 +177,7 @@ $(function() {
     );
 });
 
-function logout() {
+function studentLogout() {
     var username = getParameterByUsername('username');
     $.ajax({
         url: 'http://localhost:8080/student-logout/' + username,
@@ -191,7 +191,7 @@ function logout() {
     });
 }
 
-function deleteAccount() {
+function studentDeleteAccount() {
     var username = getParameterByUsername('username');
     $.ajax({
         url: 'http://localhost:8080/student-deleteAccount/' + username,
@@ -222,7 +222,7 @@ function Postings() {
 
 // ********* ajax request for filtered postings *************
 
-function filteredByMatchingLocation() {
+function studentFilteredByMatchingLocation() {
     $.ajax({
         url: 'http://localhost:8080/student-filter-location',
         method: 'Get',
@@ -233,11 +233,11 @@ function filteredByMatchingLocation() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingLocation());
+        $('.postings').html(showMatchingStudentLocation());
     });
 }
 
-function filteredByMatchingPositionLevel() {
+function studentFilteredByMatchingPositionLevel() {
     $.ajax({
         url: 'http://localhost:8080/student-filter-level',
         method: 'Get',
@@ -248,11 +248,11 @@ function filteredByMatchingPositionLevel() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingPositionLevel());
+        $('.postings').html(showMatchingStudentPositionLevel());
     });
 }
 
-function filteredByMatchingLanguage() {
+function studentFilteredByMatchingLanguage() {
     $.ajax({
         url: 'http://localhost:8080/student-filter-language',
         method: 'Get',
@@ -263,6 +263,6 @@ function filteredByMatchingLanguage() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingLanguage());
+        $('.postings').html(showMatchingStudentLanguage());
     });
 }

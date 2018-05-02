@@ -36,7 +36,7 @@
                     <div class="tab-pane active" id="1b">
                         <form id="student-signup-form">
                             <fieldset>
-                                <div id="first-signup-form">
+                                <div id="student-first-signup-form">
                                     <div class="form-group">
                                         <label for="exampleInputFirstName">First Name</label>
                                         <input type="firstname" class="form-control" id="student-first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
@@ -63,9 +63,9 @@
                                             required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
-                                    <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
+                                    <button type="submit" class="btn btn-primary student-next-form-button">NEXT</button>
                                 </div>
-                                <div id="second-signup-form" hidden>
+                                <div id="student-second-signup-form" hidden>
                                     <div class="form-group">
                                         <label for="exampleProgrammingLangs">Desired language to work with:</label>
                                         <select id="student-programming-langs-input" name="student-programming-langs-input" class="form-control" required>
@@ -188,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="recruiter-info" hidden>
+            <div class="recruiter-info" hidden>
                 <ul class="nav nav-pills">
                     <li class="active">
                         <a href="#1b" data-toggle="tab">Sign Up</a>
@@ -199,12 +199,12 @@
                 </ul>
                 <div class="tab-content clearfix">
                     <div class="tab-pane active" id="1b">
-                        <form class="recruiter-signup-form">
+                        <form id="recruiter-signup-form">
                             <fieldset>
-                                <div class="first-signup-form">
+                                <div id="recruiter-first-signup-form">
                                     <div class="form-group">
                                         <label for="exampleTitle">Title</label>
-                                        <select id="title-input" name="title-input" class="form-control" required>
+                                        <select id="recruiter-title-input" name="title-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Dr.">Dr.</option>
                                             <option value="Mr.">Mr.</option>
@@ -214,35 +214,36 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFirstName">First Name</label>
-                                        <input type="firstname" class="form-control" class="first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
+                                        <input type="firstname" class="form-control" id="recruiter-first-name-input" aria-describedby="emailHelp" placeholder="Enter First Name"
                                             required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputLastName">Last Name</label>
-                                        <input type="lastname" class="form-control" class="last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
+                                        <input type="lastname" class="form-control" id="recruiter-last-name-input" aria-describedby="emailHelp" placeholder="Enter Last Name"
                                             required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputUsername">Username</label>
-                                        <input type="username" class="form-control" class="username-input" placeholder="Username" required>
+                                        <input type="username" class="form-control" id="recruiter-username-input" placeholder="Username" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword">Password</label>
-                                        <input type="password" class="form-control" class="password-input" placeholder="Password" required>
+                                        <input type="password" class="form-control" id="recruiter-password-input" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail">Email address</label>
-                                        <input type="email" class="form-control" class="email-input" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <input type="email" class="form-control" id="recruiter-email-input" aria-describedby="emailHelp" placeholder="Enter email"
+                                            required>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
-                                    <button type="submit" class="btn btn-primary next-form-button">NEXT</button>
+                                    <button type="submit" class="btn btn-primary recruiter-next-form-button">NEXT</button>
                                 </div>
-                                <div class="second-signup-form" hidden>
+                                <div id="recruiter-second-signup-form" hidden>
                                     <div class="form-group">
                                         <label for="exampleProgrammingLangs">What kind of developer are you looking for?</label>
-                                        <select data-ng-class="programming-langs-input" name="programming-langs-input" class="form-control" required>
+                                        <select id="recruiter-programming-langs-input" name="programming-langs-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="C# / ASP.NET">C# / ASP.NET</option>
                                             <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
@@ -256,7 +257,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleDesiredLocation">Where is your company located?</label>
-                                        <select class="location-input" name="desired-location-input" class="form-control" required>
+                                        <select id="recruiter-location-input" name="recruiter-location-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Alabama">Alabama</option>
                                             <option value="Alaska">Alaska</option>
@@ -312,7 +313,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="examplePositionLevel">Experince required for desired developer?</label>
-                                        <select class="position-level-input" name="position-level-input" class="form-control" required>
+                                        <select id="recruiter-position-level-input" name="recruiter-position-level-input" class="form-control" required>
                                             <option value="" selected></option>
                                             <option value="Entry Level">Entry Level</option>
                                             <option value="Mid Level">Mid Level</option>
@@ -322,7 +323,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputCompanyName">Company Name</label>
-                                        <input type="company-name" class="form-control" class="company-name-input" placeholder="Company Name" required>
+                                        <input type="company-name" class="form-control" id="company-name-input" placeholder="Company Name" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleCompanyWebsiteUrl">Company Webiste Url</label>
@@ -332,29 +333,29 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <div class="student-signup-button" hidden>
+                            <div class="recruiter-signup-button" hidden>
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="2b">
-                        <form class="recruiter-login-form">
+                        <form id="recruiter-login-form">
                             <fieldset>
                                 <div class="form-group">
                                     <label for="exampleInputUsername">Username</label>
-                                    <input type="username" class="form-control" class="login-username-input" placeholder="Username" required>
+                                    <input type="username" class="form-control" id="recruiter-login-username-input" placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword">Password</label>
-                                    <input type="password" class="form-control" class="login-password-input" placeholder="Password" required>
+                                    <input type="password" class="form-control" id="recruiter-login-password-input" placeholder="Password" required>
                                 </div>
                             </fieldset>
                             <button type="submit" class="btn btn-primary">Login</button>
                         </form>
                     </div>
-                </div> -->
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <script src="index.js"></script>
 </body>

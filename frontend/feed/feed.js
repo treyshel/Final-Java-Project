@@ -47,7 +47,7 @@ function showStudentFeedData() {
         PAGE_DATA.email +
         '</h2>' +
         '<h2>Fav Lang: ' +
-        PAGE_DATA.programming_lang +
+        PAGE_DATA.programming_langs +
         '</h2>' +
         '<h2>Desired Location: ' +
         PAGE_DATA.desired_location +

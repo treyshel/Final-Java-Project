@@ -34,41 +34,45 @@ $('#networkConnections').click(function() {
 function showStudentFeedData() {
     console.log(PAGE_DATA);
     return (
-        '<h2>Name: ' +
+        '<div class="panel panel-default">' +
+        '<div class="panel-heading"><h2>Name: ' +
         PAGE_DATA.f_name +
         ' ' +
         PAGE_DATA.l_name +
-        '</h2>' +
-        '<h2>Username: ' +
+        '</h2></div>' +
+        '<div class="panel-body"><h3>Username: ' +
         PAGE_DATA.username +
-        '</h2>' +
-        '<h2:>Email: ' +
+        '</h3>' +
+        '<h3>Email: ' +
         PAGE_DATA.email +
-        '</h2>' +
-        '<h2>Fav Lang: ' +
+        '</h3>' +
+        '<h3>Fav Lang: ' +
         PAGE_DATA.programming_langs +
-        '</h2>' +
-        '<h2>Desired Location: ' +
+        '</h3>' +
+        '<h3>Desired Location: ' +
         PAGE_DATA.desired_location +
-        '</h2>' +
-        '<h2>Position Level: ' +
+        '</h3>' +
+        '<h3>Position Level: ' +
         PAGE_DATA.position_level +
-        '</h2>' +
+        '</h3>' +
+        '<h3> Portfolio: ' +
         '<a href="https://' +
         PAGE_DATA.portfolio_url +
-        '"> Portfolio: ' +
+        '">' +
         PAGE_DATA.portfolio_url +
-        '</a><br>' +
+        '</a></h3>' +
+        '<h3>Github: ' +
         '<a href="https://' +
         PAGE_DATA.github_url +
         '"> Github: ' +
         PAGE_DATA.github_url +
-        '</a><br>' +
+        '</a><h3>' +
+        '<h3> Download Resume: ' +
         '<a href="https://' +
         PAGE_DATA.resume_url +
-        '"> Portfolio: ' +
+        '">' +
         PAGE_DATA.resume_url +
-        '</a>'
+        '</a><h3></div>'
     );
 }
 
@@ -77,42 +81,76 @@ function showAllJobPostings() {
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
             '<div class="panel panel-default">' +
-            '<div class="panel-heading">Company: ' +
+            '<div class="panel-heading" style="font-weight:bolder">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>' +
-            '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
-            PAGE_DATA[i].email +
-            '</p><p>Company Location: ' +
+            '<div class="panel-body">' +
+            '<p>Company Location: ' +
             PAGE_DATA[i].company_location +
             '</p><p>Languages for Position: ' +
             PAGE_DATA[i].langs_used +
-            '</p><p>Recruiter Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</p>' +
+            '<p>Comany Website: <a href="https://' +
+            PAGE_DATA[i].website_url +
+            '">' +
+            PAGE_DATA[i].website_url +
+            '</a></p>' +
+            '<p>Required Experience: ' +
+            PAGE_DATA[i].position_level +
+            '<p>' +
+            '<button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
     }
     return html;
 }
+
+// function showAllConnections() {
+//     var html = '';
+//     for (var i = 0; i < PAGE_DATA.length; i++) {
+//         html +=
+//             '<div class="panel panel-default">' +
+//             '<div class="panel-heading" style="font-weight:bolder">Company: ' +
+//             PAGE_DATA[i].company_name +
+//             '<div>' +
+//             '<div class="panel-body">Information:<br>' +
+//             '<p>Recruiter Name: ' +
+//             PAGE_DATA[i].f_name +
+//             ' ' +
+//             PAGE_DATA[i].l_name +
+//             '</p><p>Recruiter Email: ' +
+//             PAGE_DATA[i].email +
+//             '</p><p>Company Location: ' +
+//             PAGE_DATA[i].company_location +
+//             '</p><p>Languages for Position: ' +
+//             PAGE_DATA[i].langs_used +
+//             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+//             '</div>';
+//     }
+// }
 
 function showMatchingRecruiterLocation() {
     var html = '';
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
             '<div class="panel panel-default">' +
-            '<div class="panel-heading">Company: ' +
+            '<div class="panel-heading" style="font-weight:bolder">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>' +
-            '<div class="panel-body">Information:<br><p>Recruiter Email: ' +
-            PAGE_DATA[i].email +
-            '</p><p>Company Location: ' +
+            '<div class="panel-body">' +
+            '<p>Company Location: ' +
             PAGE_DATA[i].company_location +
-            '</p><p>Recruiter Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</p><p>Languages for Position: ' +
+            PAGE_DATA[i].langs_used +
+            '</p>' +
+            '<p>Comany Website: <a href="https://' +
+            PAGE_DATA[i].website_url +
+            '">' +
+            PAGE_DATA[i].website_url +
+            '</a></p>' +
+            '<p>Required Experience: ' +
+            PAGE_DATA[i].position_level +
+            '<p>' +
+            '<button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
     }
     return html;
@@ -123,16 +161,24 @@ function showMatchingRecruiterPositionLevel() {
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
             '<div class="panel panel-default">' +
-            '<div class="panel-heading">Company: ' +
+            '<div class="panel-heading" style="font-weight:bolder">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>' +
-            '<div class="panel-body">Information:<br><p>Languages for Position Level: ' +
+            '<div class="panel-body">' +
+            '<p>Company Location: ' +
+            PAGE_DATA[i].company_location +
+            '</p><p>Languages for Position: ' +
+            PAGE_DATA[i].langs_used +
+            '</p>' +
+            '<p>Comany Website: <a href="https://' +
+            PAGE_DATA[i].website_url +
+            '">' +
+            PAGE_DATA[i].website_url +
+            '</a></p>' +
+            '<p>Required Experience: ' +
             PAGE_DATA[i].position_level +
-            '</p><p>Recruiter Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '<p>' +
+            '<button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
     }
     return html;
@@ -143,16 +189,24 @@ function showMatchingRecruiterLanguage() {
     for (var i = 0; i < PAGE_DATA.length; i++) {
         html +=
             '<div class="panel panel-default">' +
-            '<div class="panel-heading">Company: ' +
+            '<div class="panel-heading" style="font-weight:bolder">Company: ' +
             PAGE_DATA[i].company_name +
             '</div>' +
-            '<div class="panel-body">Information:<br><p>Languages for Position: ' +
+            '<div class="panel-body">' +
+            '<p>Company Location: ' +
+            PAGE_DATA[i].company_location +
+            '</p><p>Languages for Position: ' +
             PAGE_DATA[i].langs_used +
-            '</p><p>Recruiter Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+            '</p>' +
+            '<p>Comany Website: <a href="https://' +
+            PAGE_DATA[i].website_url +
+            '">' +
+            PAGE_DATA[i].website_url +
+            '</a></p>' +
+            '<p>Required Experience: ' +
+            PAGE_DATA[i].position_level +
+            '<p>' +
+            '<button type="submit" class="btn btn-primary">Connect</button></div>' +
             '</div>';
     }
     return html;
@@ -242,7 +296,7 @@ function studentFilteredByMatchingLocation() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingStudentLocation());
+        $('.postings').html(showMatchingRecruiterLocation());
     });
 }
 
@@ -257,7 +311,7 @@ function studentFilteredByMatchingPositionLevel() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingStudentPositionLevel());
+        $('.postings').html(showMatchingRecruiterPositionLevel());
     });
 }
 
@@ -272,252 +326,252 @@ function studentFilteredByMatchingLanguage() {
     }).then(function(response) {
         console.log(response);
         PAGE_DATA = response;
-        $('.postings').html(showMatchingStudentLanguage());
+        $('.postings').html(showMatchingRecruiterLanguage());
     });
 }
 
 // ****************recruiter feed
 
-function showRecruiterFeedData() {
-    console.log(PAGE_DATA);
-    return (
-        '<h2>Name: ' +
-        PAGE_DATA.title +
-        ' ' +
-        PAGE_DATA.f_name +
-        ' ' +
-        PAGE_DATA.l_name +
-        '</h2>' +
-        '<h2>Username: ' +
-        PAGE_DATA.username +
-        '</h2>' +
-        '<h2:>Email: ' +
-        PAGE_DATA.email +
-        '</h2>' +
-        '<h2>Company Location: ' +
-        PAGE_DATA.company_location +
-        '</h2>' +
-        '<h2>Level Looking For: ' +
-        PAGE_DATA.position_level +
-        '</h2>' +
-        '<h2>Company Name: ' +
-        PAGE_DATA.company_name +
-        '</h2><br>' +
-        '<h2>Position Languages: ' +
-        PAGE_DATA.langs_used +
-        '</h2><br>' +
-        '<a href="https://' +
-        PAGE_DATA.website_url +
-        '">Website: ' +
-        PAGE_DATA.website_url +
-        '</a>'
-    );
-}
+// function showRecruiterFeedData() {
+//     console.log(PAGE_DATA);
+//     return (
+//         '<h2>Name: ' +
+//         PAGE_DATA.title +
+//         ' ' +
+//         PAGE_DATA.f_name +
+//         ' ' +
+//         PAGE_DATA.l_name +
+//         '</h2>' +
+//         '<h2>Username: ' +
+//         PAGE_DATA.username +
+//         '</h2>' +
+//         '<h2:>Email: ' +
+//         PAGE_DATA.email +
+//         '</h2>' +
+//         '<h2>Company Location: ' +
+//         PAGE_DATA.company_location +
+//         '</h2>' +
+//         '<h2>Level Looking For: ' +
+//         PAGE_DATA.position_level +
+//         '</h2>' +
+//         '<h2>Company Name: ' +
+//         PAGE_DATA.company_name +
+//         '</h2><br>' +
+//         '<h2>Position Languages: ' +
+//         PAGE_DATA.langs_used +
+//         '</h2><br>' +
+//         '<a href="https://' +
+//         PAGE_DATA.website_url +
+//         '">Website: ' +
+//         PAGE_DATA.website_url +
+//         '</a>'
+//     );
+// }
 
-function showAllDeveloperPostings() {
-    var html = '';
-    for (var i = 0; i < PAGE_DATA.length; i++) {
-        html +=
-            '<div class="panel panel-default">' +
-            '<div class="panel-heading">Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name;
-        '</div>' +
-            '<div class="panel-body">Information:<br><p>Developer Email: ' +
-            PAGE_DATA[i].email +
-            '</p><p>Desired Location: ' +
-            PAGE_DATA[i].desired_location +
-            '</p><p>Desired Languages Position: ' +
-            PAGE_DATA[i].programming_langs +
-            '</p><p>Resume Url ' +
-            PAGE_DATA[i].resume_url +
-            '</p><a href="https//:' +
-            PAGE_DATA[i].portfolio_url +
-            '>' +
-            PAGE_DATA[i].portfolio_url +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-            '</div>';
-    }
-    return html;
-}
+// function showAllDeveloperPostings() {
+//     var html = '';
+//     for (var i = 0; i < PAGE_DATA.length; i++) {
+//         html +=
+//             '<div class="panel panel-default">' +
+//             '<div class="panel-heading">Name: ' +
+//             PAGE_DATA[i].f_name +
+//             ' ' +
+//             PAGE_DATA[i].l_name;
+//         '</div>' +
+//             '<div class="panel-body">Information:<br><p>Developer Email: ' +
+//             PAGE_DATA[i].email +
+//             '</p><p>Desired Location: ' +
+//             PAGE_DATA[i].desired_location +
+//             '</p><p>Desired Languages Position: ' +
+//             PAGE_DATA[i].programming_langs +
+//             '</p><p>Resume Url ' +
+//             PAGE_DATA[i].resume_url +
+//             '</p><a href="https//:' +
+//             PAGE_DATA[i].portfolio_url +
+//             '>' +
+//             PAGE_DATA[i].portfolio_url +
+//             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+//             '</div>';
+//     }
+//     return html;
+// }
 
-function showMatchingDeveloperLocation() {
-    var html = '';
-    for (var i = 0; i < PAGE_DATA.length; i++) {
-        html +=
-            '<div class="panel panel-default">' +
-            '<div class="panel-heading">name: ' +
-            PAGE_DATA[i].f_name +
-            '</div>' +
-            '<div class="panel-body">Information:<br><p>Developer Email: ' +
-            PAGE_DATA[i].email +
-            '</p><p>Desired Location: ' +
-            PAGE_DATA[i].desired_location +
-            '</p><p>Developer Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-            '</div>';
-    }
-    return html;
-}
+// function showMatchingDeveloperLocation() {
+//     var html = '';
+//     for (var i = 0; i < PAGE_DATA.length; i++) {
+//         html +=
+//             '<div class="panel panel-default">' +
+//             '<div class="panel-heading">name: ' +
+//             PAGE_DATA[i].f_name +
+//             '</div>' +
+//             '<div class="panel-body">Information:<br><p>Developer Email: ' +
+//             PAGE_DATA[i].email +
+//             '</p><p>Desired Location: ' +
+//             PAGE_DATA[i].desired_location +
+//             '</p><p>Developer Name: ' +
+//             PAGE_DATA[i].f_name +
+//             ' ' +
+//             PAGE_DATA[i].l_name +
+//             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+//             '</div>';
+//     }
+//     return html;
+// }
 
-function showMatchingDeveloperPositionLevel() {
-    var html = '';
-    for (var i = 0; i < PAGE_DATA.length; i++) {
-        html +=
-            '<div class="panel panel-default">' +
-            '<div class="panel-heading">Dev name: ' +
-            PAGE_DATA[i].f_name +
-            '</div>' +
-            '<div class="panel-body">Information:<br><p>Position Level: ' +
-            PAGE_DATA[i].position_level +
-            '</p><p>Recruiter Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-            '</div>';
-    }
-    return html;
-}
+// function showMatchingDeveloperPositionLevel() {
+//     var html = '';
+//     for (var i = 0; i < PAGE_DATA.length; i++) {
+//         html +=
+//             '<div class="panel panel-default">' +
+//             '<div class="panel-heading">Dev name: ' +
+//             PAGE_DATA[i].f_name +
+//             '</div>' +
+//             '<div class="panel-body">Information:<br><p>Position Level: ' +
+//             PAGE_DATA[i].position_level +
+//             '</p><p>Recruiter Name: ' +
+//             PAGE_DATA[i].f_name +
+//             ' ' +
+//             PAGE_DATA[i].l_name +
+//             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+//             '</div>';
+//     }
+//     return html;
+// }
 
-function showMatchingDeveloperLanguage() {
-    var html = '';
-    for (var i = 0; i < PAGE_DATA.length; i++) {
-        html +=
-            '<div class="panel panel-default">' +
-            '<div class="panel-heading">Last name: ' +
-            PAGE_DATA[i].l_name +
-            '</div>' +
-            '<div class="panel-body">Information:<br><p>Languages: ' +
-            PAGE_DATA[i].programming_langs +
-            '</p><p>Dev Name: ' +
-            PAGE_DATA[i].f_name +
-            ' ' +
-            PAGE_DATA[i].l_name +
-            '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
-            '</div>';
-    }
-    return html;
-}
+// function showMatchingDeveloperLanguage() {
+//     var html = '';
+//     for (var i = 0; i < PAGE_DATA.length; i++) {
+//         html +=
+//             '<div class="panel panel-default">' +
+//             '<div class="panel-heading">Last name: ' +
+//             PAGE_DATA[i].l_name +
+//             '</div>' +
+//             '<div class="panel-body">Information:<br><p>Languages: ' +
+//             PAGE_DATA[i].programming_langs +
+//             '</p><p>Dev Name: ' +
+//             PAGE_DATA[i].f_name +
+//             ' ' +
+//             PAGE_DATA[i].l_name +
+//             '</p><button type="submit" class="btn btn-primary">Connect</button></div>' +
+//             '</div>';
+//     }
+//     return html;
+// }
 
-function recruiterFeed(response) {
-    console.log(response);
-    PAGE_DATA = response;
-    $('.feedPage').html(showRecruiterFeedData());
-}
+// function recruiterFeed(response) {
+//     console.log(response);
+//     PAGE_DATA = response;
+//     $('.feedPage').html(showRecruiterFeedData());
+// }
 
-function getParameterByUsername(username) {
-    var url = window.location.href;
-    username = username.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + username + '(=([^&#]*)|&|#|$)');
-    results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+// function getParameterByUsername(username) {
+//     var url = window.location.href;
+//     username = username.replace(/[\[\]]/g, '\\$&');
+//     var regex = new RegExp('[?&]' + username + '(=([^&#]*)|&|#|$)');
+//     results = regex.exec(url);
+//     if (!results) return null;
+//     if (!results[2]) return '';
+//     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+// }
 
-$(function() {
-    var username = getParameterByUsername('username');
-    console.log(username);
-    $.post('http://localhost:8080/recruiter-feed/' + username).then(
-        function handleResponse(response) {
-            var response = response;
-            console.log(response);
-            recruiterFeed(response);
-        }
-    );
-});
+// $(function() {
+//     var username = getParameterByUsername('username');
+//     console.log(username);
+//     $.post('http://localhost:8080/recruiter-feed/' + username).then(
+//         function handleResponse(response) {
+//             var response = response;
+//             console.log(response);
+//             recruiterFeed(response);
+//         }
+//     );
+// });
 
-function recruiterLogout() {
-    var username = getParameterByUsername('username');
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-logout/' + username,
-        method: 'Post',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function() {
-        window.location.replace('../signup-and-login/index.html');
-    });
-}
+// function recruiterLogout() {
+//     var username = getParameterByUsername('username');
+//     $.ajax({
+//         url: 'http://localhost:8080/recruiter-logout/' + username,
+//         method: 'Post',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function() {
+//         window.location.replace('../signup-and-login/index.html');
+//     });
+// }
 
-function recruiterDeleteAccount() {
-    var username = getParameterByUsername('username');
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-deleteAccount/' + username,
-        method: 'Post',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function() {
-        window.location.replace('../signup-and-login/index.html');
-    });
-}
+// function recruiterDeleteAccount() {
+//     var username = getParameterByUsername('username');
+//     $.ajax({
+//         url: 'http://localhost:8080/recruiter-deleteAccount/' + username,
+//         method: 'Post',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function() {
+//         window.location.replace('../signup-and-login/index.html');
+//     });
+// }
 
-function developerPostings() {
-    $.ajax({
-        url: 'http://localhost:8080/allStudents',
-        method: 'Get',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function(response) {
-        console.log(response);
-        PAGE_DATA = response;
-        $('.postings').html(showAllDeveloperPostings());
-    });
-}
+// function developerPostings() {
+//     $.ajax({
+//         url: 'http://localhost:8080/allStudents',
+//         method: 'Get',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function(response) {
+//         console.log(response);
+//         PAGE_DATA = response;
+//         $('.postings').html(showAllDeveloperPostings());
+//     });
+// }
 
-// ********* ajax request for filtered postings *************
+// // ********* ajax request for filtered postings *************
 
-function recruiterFilteredByMatchingLocation() {
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-filter-location',
-        method: 'Get',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function(response) {
-        console.log(response);
-        PAGE_DATA = response;
-        $('.postings').html(showMatchingDeveloperLocation());
-    });
-}
+// function recruiterFilteredByMatchingLocation() {
+//     $.ajax({
+//         url: 'http://localhost:8080/recruiter-filter-location',
+//         method: 'Get',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function(response) {
+//         console.log(response);
+//         PAGE_DATA = response;
+//         $('.postings').html(showMatchingDeveloperLocation());
+//     });
+// }
 
-function recruiterFilteredByMatchingPositionLevel() {
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-filter-level',
-        method: 'Get',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function(response) {
-        console.log(response);
-        PAGE_DATA = response;
-        $('.postings').html(showMatchingDeveloperPositionLevel());
-    });
-}
+// function recruiterFilteredByMatchingPositionLevel() {
+//     $.ajax({
+//         url: 'http://localhost:8080/recruiter-filter-level',
+//         method: 'Get',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function(response) {
+//         console.log(response);
+//         PAGE_DATA = response;
+//         $('.postings').html(showMatchingDeveloperPositionLevel());
+//     });
+// }
 
-function recruiterFilteredByMatchingLanguage() {
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-filter-language',
-        method: 'Get',
-        dataType: 'json',
-        crossDomain: true,
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    }).then(function(response) {
-        console.log(response);
-        PAGE_DATA = response;
-        $('.postings').html(showMatchingDeveloperLanguage());
-    });
-}
+// function recruiterFilteredByMatchingLanguage() {
+//     $.ajax({
+//         url: 'http://localhost:8080/recruiter-filter-language',
+//         method: 'Get',
+//         dataType: 'json',
+//         crossDomain: true,
+//         contentType: 'application/json',
+//         mimeType: 'application/json'
+//     }).then(function(response) {
+//         console.log(response);
+//         PAGE_DATA = response;
+//         $('.postings').html(showMatchingDeveloperLanguage());
+//     });
+// }

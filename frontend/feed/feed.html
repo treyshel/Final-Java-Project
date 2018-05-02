@@ -16,7 +16,7 @@
     <link href="feed.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color:rgb(192, 192, 253)">
     <div class="container lower">
         <div class="row">
             <h1>ON
@@ -25,13 +25,13 @@
             <nav class="col-sm-3">
                 <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
                     <li>
-                        <a class="active" type="submit" id="ProfileInfo">Profile Info</a>
+                        <a class="active" type="submit" id="ProfileInfo" style="color:white">Profile Info</a>
                     </li>
                     <li>
-                        <a type="submit" id="jobPostings" onclick="Postings()">Job Postings</a>
+                        <a type="submit" id="jobPostings" onclick="Postings()" style="color:white">Job Postings</a>
                     </li>
                     <li>
-                        <a type="submit" id="networkConnections">Connections</a>
+                        <a type="submit" id="networkConnections" style="color:white">Connections</a>
                     </li>
                     <li>
                         <button class="btn" onclick="studentLogout()">Log Out</button>
@@ -50,13 +50,13 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a id="filterBySameLocation" type="submit" onclick="filteredByMatchingLocation()">Same Location</a>
+                            <a id="filterBySameLocation" type="submit" onclick="studentFilteredByMatchingLocation()">Same Location</a>
                         </li>
                         <li>
-                            <a id="filterBySameLanguage" type="submit" onclick="filteredByMatchingLanguage()">Same Programming Language</a>
+                            <a id="filterBySameLanguage" type="submit" onclick="studentFilteredByMatchingLanguage()">Same Programming Language</a>
                         </li>
                         <li>
-                            <a id="filterBySamePositionLevel" type="submit" onclick="filteredByMatchingPositionLevel()">Same Position Level</a>
+                            <a id="filterBySamePositionLevel" type="submit" onclick="studentFilteredByMatchingPositionLevel()">Same Position Level</a>
                         </li>
                     </ul>
                 </div>
@@ -65,7 +65,32 @@
                 <div class="col-sm-9 postings"></div>
             </div>
             <div class="col-sm-9 connections" hidden>
-                Connections
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="font-weight:bolder">
+                        <h2>Company: Renasant</p>
+                    </div>
+                    <div class="panel-body">
+                        <h4>Company Location: Alabama</h4>
+                        <h4>Recruiter Name: Zack Bishop</h4>
+                        <h4>Recruiter Email: zbishop@renasant.org</h4>
+                        <h4>Website:
+                            <a href="htts://www.renasant.com">www.renasant.com</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="font-weight:bolder">
+                        <h2>Company: C Spire</p>
+                    </div>
+                    <div class="panel-body">
+                        <h4>Company Location: Mississippi</h4>
+                        <h4>Recruiter Name: Carla Lewis</h4>
+                        <h4>Recruiter Email: clewis1@cspire.com</h4>
+                        <h4>Website:
+                            <a href="htts://www.renasant.com">www.cspire.com</a>
+                        </h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

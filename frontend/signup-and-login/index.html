@@ -15,13 +15,22 @@
     <link href="index.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color:rgb(192, 192, 253)">
     <div id="exTab3" class="container">
         <div class="col-lg-4 col-lg-offset-4">
-            <legend>Welcome</legend>
+            <legend>
+                <h1 style="color:blue">Welcome</h1>
+            </legend>
             <div class="student-or-recruiter">
-                <button type="submit" class="btn btn-outline-primary student">Student</button>
-                <button type="submit" class="btn btn-outline-primary recruiter">Employer</button>
+                <h4>Are you a...</h4>
+                <center>
+                    <button type="submit" class="btn btn-primary btn-lg student" style="padding-left:15px">Student</button>
+                    <br>
+                    <br>
+                    <h4>OR</h4>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg recruiter">Employer</button>
+                </center>
             </div>
             <div class="student-info" hidden>
                 <ul class="nav nav-pills">
@@ -68,7 +77,7 @@
                                 <div id="student-second-signup-form" hidden>
                                     <div class="form-group">
                                         <label for="exampleProgrammingLangs">Desired language to work with:</label>
-                                        <select id="student-programming-langs-input" name="student-programming-langs-input" class="form-control" required>
+                                        <select id="student-programming-langs-input" name="student-programming-langs-input" class="form-control">
                                             <option value="" selected></option>
                                             <option value="C# / ASP.NET">C# / ASP.NET</option>
                                             <option value="JavaScript / React or Angular">JavaScript / React or Angular</option>
@@ -82,7 +91,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleDesiredLocation">Desired Location</label>
-                                        <select id="student-location-input" name="student-location-input" class="form-control" required>
+                                        <select id="student-location-input" name="student-location-input" class="form-control">
                                             <option value="" selected></option>
                                             <option value="Alabama">Alabama</option>
                                             <option value="Alaska">Alaska</option>
@@ -138,7 +147,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="examplePositionLevel">Position Level</label>
-                                        <select id="student-position-level-input" name="student-position-level-input" class="form-control" required>
+                                        <select id="student-position-level-input" name="student-position-level-input" class="form-control">
                                             <option value="" selected></option>
                                             <option value="Entry Level">Entry Level</option>
                                             <option value="Mid Level">Mid Level</option>
@@ -148,20 +157,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleResumeUrl">Resume Url</label>
-                                        <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url"
-                                            required>
+                                        <input type="resume-url" class="form-control" id="resume-url-input" aria-describedby="emailHelp" placeholder="Enter Resume Url">
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleGithubUrl">Github Url</label>
-                                        <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url"
-                                            required>
+                                        <input type="github-url" class="form-control" id="github-url-input" aria-describedby="emailHelp" placeholder="Enter Github Url">
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="examplePortfolioUrl">Portfolio Url</label>
-                                        <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url"
-                                            required>
+                                        <input type="portfolio-url" class="form-control" id="portfolio-url-input" aria-describedby="emailHelp" placeholder="Enter Portfolio Url">
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                 </div>

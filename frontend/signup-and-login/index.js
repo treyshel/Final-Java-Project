@@ -41,98 +41,98 @@ $('.recruiter').on('click', function() {
 });
 
 // ************ recruiter work
-function recruiterSignup() {
-    var username = $('#recruiter-username-input').val();
-    window.localStorage.setItem('username', username);
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-signup',
-        method: 'Post',
-        dataType: 'json',
-        crossDomain: true,
-        data: JSON.stringify({
-            title: $('#title-input').val(),
-            f_name: $('#recruiter-first-name-input').val(),
-            l_name: $('#recruiter-last-name-input').val(),
-            username: username,
-            p_word: $('#recruiter-password-input').val(),
-            email: $('#recruiter-email-input').val(),
-            langs_used: $('#recruiter-programming-langs-input').val(),
-            company_name: $('#company-name-input').val(),
-            company_location: $('#recruiter-location-input').val(),
-            position_level: $('#recruiter-position-level-input').val(),
-            website_url: $('#website-url-input')
-        }),
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    })
-        .then(function handleFeedResponse(response) {
-            var PAGE_DATA = response;
-            console.log(PAGE_DATA);
-            window.location.replace(
-                '../feed/feed.html?username=' +
-                    $('#recruiter-username-input').val()
-            );
-        })
-        .catch(function handleFeedError(err) {
-            console.log(err);
-        });
-    console.log(
-        JSON.stringify({
-            title: $('#title-input').val(),
-            f_name: $('#recruiter-first-name-input').val(),
-            l_name: $('#recruiter-last-name-input').val(),
-            username: username,
-            p_word: $('#recruiter-password-input').val(),
-            email: $('#recruiter-email-input').val(),
-            langs_used: $('#recruiter-programming-langs-input').val(),
-            company_name: $('#company-name-input').val(),
-            company_location: $('#recruiter-location-input').val(),
-            position_level: $('#recruiter-position-level-input').val(),
-            website_url: $('#website-url-input')
-        })
-    );
-}
+// function recruiterSignup() {
+// var username = $('#recruiter-username-input').val();
+// window.localStorage.setItem('username', username);
+// $.ajax({
+// url: 'http://localhost:8080/recruiter-signup',
+// method: 'Post',
+// dataType: 'json',
+// crossDomain: true,
+// data: JSON.stringify({
+// title: $('#title-input').val(),
+// f_name: $('#recruiter-first-name-input').val(),
+// l_name: $('#recruiter-last-name-input').val(),
+// username: username,
+// p_word: $('#recruiter-password-input').val(),
+// email: $('#recruiter-email-input').val(),
+// langs_used: $('#recruiter-programming-langs-input').val(),
+// company_name: $('#company-name-input').val(),
+// company_location: $('#recruiter-location-input').val(),
+// position_level: $('#recruiter-position-level-input').val(),
+// website_url: $('#website-url-input')
+// }),
+// contentType: 'application/json',
+// mimeType: 'application/json'
+// })
+// .then(function handleFeedResponse(response) {
+// var PAGE_DATA = response;
+// console.log(PAGE_DATA);
+// window.location.replace(
+// '../feed/feed.html?username=' +
+// $('#recruiter-username-input').val()
+// );
+// })
+// .catch(function handleFeedError(err) {
+// console.log(err);
+// });
+// console.log(
+// JSON.stringify({
+// title: $('#title-input').val(),
+// f_name: $('#recruiter-first-name-input').val(),
+// l_name: $('#recruiter-last-name-input').val(),
+// username: username,
+// p_word: $('#recruiter-password-input').val(),
+// email: $('#recruiter-email-input').val(),
+// langs_used: $('#recruiter-programming-langs-input').val(),
+// company_name: $('#company-name-input').val(),
+// company_location: $('#recruiter-location-input').val(),
+// position_level: $('#recruiter-position-level-input').val(),
+// website_url: $('#website-url-input')
+// })
+// );
+// }
+//
+// function recruiterLogin() {
+// console.log(
+// JSON.stringify({
+// username: $('#recruiter-login-username-input').val(),
+// p_word: $('#recruiter-login-password-input').val()
+// })
+// );
+// $.ajax({
+// url: 'http://localhost:8080/recruiter-login',
+// method: 'Post',
+// dataType: 'json',
+// crossDomain: true,
+// data: JSON.stringify({
+// username: $('#recruiter-login-username-input').val(),
+// p_word: $('#recruiter-login-password-input').val()
+// }),
+// contentType: 'application/json',
+// mimeType: 'application/json'
+// })
+// .then(function handleFeedResponse(response) {
+// window.location.replace(
+// '../feed/feed.html?username=' + response.username
+// );
+// })
+// .catch(function handleFeedError(err) {
+// console.log(err);
+// });
+// }
+//
+// $('#recruiter-signup-form').on('submit', function(event) {
+// event.preventDefault();
+// recruiterSignup();
+// });
+//
+// $('#recruiter-login-form').on('submit', function(event) {
+// event.preventDefault();
+// recruiterLogin();
+// });
 
-function recruiterLogin() {
-    console.log(
-        JSON.stringify({
-            username: $('#recruiter-login-username-input').val(),
-            p_word: $('#recruiter-login-password-input').val()
-        })
-    );
-    $.ajax({
-        url: 'http://localhost:8080/recruiter-login',
-        method: 'Post',
-        dataType: 'json',
-        crossDomain: true,
-        data: JSON.stringify({
-            username: $('#recruiter-login-username-input').val(),
-            p_word: $('#recruiter-login-password-input').val()
-        }),
-        contentType: 'application/json',
-        mimeType: 'application/json'
-    })
-        .then(function handleFeedResponse(response) {
-            window.location.replace(
-                '../feed/feed.html?username=' + response.username
-            );
-        })
-        .catch(function handleFeedError(err) {
-            console.log(err);
-        });
-}
-
-$('#recruiter-signup-form').on('submit', function(event) {
-    event.preventDefault();
-    recruiterSignup();
-});
-
-$('#recruiter-login-form').on('submit', function(event) {
-    event.preventDefault();
-    recruiterLogin();
-});
-
-// *********** student work
+//*********** student work
 function studentSignup() {
     var username = $('#student-username-input').val();
     console.log(username);
@@ -215,3 +215,5 @@ function studentLogin() {
             console.log(err);
         });
 }
+
+//
